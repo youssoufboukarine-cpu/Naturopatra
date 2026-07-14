@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naturopatra — Médecine naturelle et remèdes à base de plantes</title>
+<meta name="description" content="Naturopatra — produits de médecine naturelle sélectionnés avec soin : herbes, huiles essentielles, teintures mères et compléments botaniques.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- ===== Bandeau d'annonce ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <p data-i18n="topbar">Découvrez nos derniers produits disponibles dès maintenant !</p>
+  </div>
+</div>
+
+<!-- ===== En-tête ===== -->
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="#accueil" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="36" height="36">
+          <path d="M20 36 C20 26, 12 24, 10 14 C18 16, 20 22, 20 30 C20 22, 22 16, 30 14 C28 24, 20 26, 20 36 Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="logo-text">Naturopatra</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale" data-i18n-target="aria-label" data-i18n="header.navLabel">
+      <ul>
+        <li><a href="#accueil" class="nav-link active" data-tab="accueil" data-i18n="nav.accueil">Accueil</a></li>
+        <li><a href="#presentation" class="nav-link" data-tab="presentation" data-i18n="nav.presentation">À propos</a></li>
+        <li><a href="#produits" class="nav-link" data-tab="produits" data-i18n="nav.produits">Produits</a></li>
+        <li><a href="#qui-sommes-nous" class="nav-link" data-tab="qui-sommes-nous" data-i18n="nav.qui-sommes-nous">Notre équipe</a></li>
+        <li><a href="#contact" class="nav-link" data-tab="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#produits" class="btn btn-ghost" data-i18n="header.catalog">Voir le catalogue</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n-target="aria-label" data-i18n="header.burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== Page d'accueil ===== -->
+  <section class="hero" id="accueil">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Collection d’herbes n° 01 — depuis 2019</p>
+        <h1>La nature<br><em>préservée</em>,<br>bouteille après bouteille.</h1>
+        <p class="hero-lede">
+          Naturopatra sélectionne, analyse et prépare des remèdes naturels — herbes séchées,
+          teintures mères, huiles essentielles et composés botaniques — pour accompagner le corps
+          sans le forcer.</p>
+        <div class="hero-cta">
+          <a href="#produits" class="btn btn-primary">Découvrir les produits</a>
+          <a href="#presentation" class="btn btn-outline">Comment ça marche</a>
+        </div>
+      </div>
+
+      <div class="hero-plate" aria-hidden="true">
+        <div class="plate-frame">
+          <svg viewBox="0 0 320 400" class="plate-illustration">
+            <line x1="20" y1="30" x2="300" y2="30" class="stitch"/>
+            <line x1="20" y1="370" x2="300" y2="370" class="stitch"/>
+            <path d="M160 60 C120 110, 100 160, 160 230 C220 160, 200 110, 160 60 Z" class="leaf-fill"/>
+            <path d="M160 60 L160 230" class="leaf-vein"/>
+            <path d="M160 100 L130 130 M160 100 L190 130 M160 140 L125 165 M160 140 L195 165 M160 180 L135 205 M160 180 L185 205" class="leaf-vein-thin"/>
+            <path d="M60 260 C90 250, 120 270, 110 300 C80 305, 55 290, 60 260 Z" class="leaf-fill leaf-fill-alt"/>
+            <path d="M260 250 C230 245, 205 270, 220 298 C250 300, 270 280, 260 250 Z" class="leaf-fill leaf-fill-alt"/>
+            <text x="160" y="345" text-anchor="middle" class="plate-label" data-i18n="hero.plateLabel">Herbarium officinale</text>
+            <text x="160" y="360" text-anchor="middle" class="plate-sub" data-i18n="hero.plateSub">Échantillon n° 014 · récolté à la main</text>
+          </svg>
+        </div>
+        <span class="plate-tag">Planche botanique</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="presentation" id="presentation">
+    <div class="presentation-grid">
+      <article class="pillar">
+        <span class="pillar-index">I.</span>
+        <h3>Sélection</h3>
+        <p>Nous choisissons chaque plante auprès de producteurs de confiance — culture biologique ou cueillette sauvage responsable — puis nous la testons dans un laboratoire indépendant avant de l’ajouter au catalogue.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar-index">II.</span>
+        <h3>Préparation</h3>
+        <p>Séchage lent, infusion à froid et distillation douce : nos méthodes préservent les principes actifs plus que la rapidité de production.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar-index">III.</span>
+        <h3>Accompagnement</h3>
+        <p>Une équipe de naturopathes certifiés répond à vos questions avant et après l’achat — par message, téléphone ou en clinique.</p>
+      </article>
+    </div>
+
+    <div class="banner-quote">
+      <blockquote>
+        « La médecine naturelle ne remplace pas la médecine : elle crée le terrain où le corps peut se guérir lui-même. »
+      </blockquote>
+      <cite>— Conseiller en médecine naturelle et nutrition, spécialisé en naturopathie</cite>
+    </div>
+  </section>
+
+  <!-- ===== Produits ===== -->
+  <section class="produits" id="produits">
+    <div class="section-head">
+      <p class="eyebrow">Catalogue</p>
+      <h2>Nos produits</h2>
+    </div>
+
+    <div class="filter-row" role="tablist" aria-label="Filtrer les produits">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="plantes">Herbes séchées</button>
+      <button class="filter-btn" data-filter="huiles">Huiles essentielles</button>
+      <button class="filter-btn" data-filter="teintures">Teintures mères</button>
+      <button class="filter-btn" data-filter="complexes">Composés</button>
+    </div>
+
+    <div class="specimen-grid" id="specimen-grid">
+
+      <article class="specimen-card" data-cat="plantes">
+        <div class="specimen-visual" style="--tint:#6E7F4F">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 014</p>
+          <h3>Camomille</h3>
+          <p class="specimen-latin">Matricaria chamomilla</p>
+          <p class="specimen-desc">Fleurs séchées entières, apaisantes pour la digestion et un sommeil léger.</p>
+          <div class="specimen-foot">
+            <span class="price">7,90 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="specimen-card" data-cat="huiles">
+        <div class="specimen-visual" style="--tint:#8A5A3B">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 027</p>
+          <h3>Huile essentielle de lavande</h3>
+          <p class="specimen-latin">Lavandula angustifolia</p>
+          <p class="specimen-desc">Distillation douce en Provence, flacon compte-gouttes de 10 ml.</p>
+          <div class="specimen-foot">
+            <span class="price">12,50 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="specimen-card" data-cat="teintures">
+        <div class="specimen-visual" style="--tint:#B5654A">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 041</p>
+          <h3>Teinture mère d’échinacée</h3>
+          <p class="specimen-latin">Echinacea purpurea</p>
+          <p class="specimen-desc">Macération hydroalcoolique à froid, soutien pour le système immunitaire.</p>
+          <div class="specimen-foot">
+            <span class="price">14,90 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="specimen-card" data-cat="complexes">
+        <div class="specimen-visual" style="--tint:#C08A2E">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 052</p>
+          <h3>Mélange « Sommeil profond »</h3>
+          <p class="specimen-latin">Valeriana · Passiflore · Mélisse</p>
+          <p class="specimen-desc">Trois plantes associées en capsules, cycle thérapeutique de 30 jours.</p>
+          <div class="specimen-foot">
+            <span class="price">19,90 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="specimen-card" data-cat="plantes">
+        <div class="specimen-visual" style="--tint:#4E6B58">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 018</p>
+          <h3>Ortie</h3>
+          <p class="specimen-latin">Urtica dioica</p>
+          <p class="specimen-desc">Riche en minéraux, utilisée en infusion ou en cuisson longue.</p>
+          <div class="specimen-foot">
+            <span class="price">6,50 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="specimen-card" data-cat="huiles">
+        <div class="specimen-visual" style="--tint:#3C5A44">
+          <svg viewBox="0 0 100 100"><path d="M50 90 C30 70,25 45,50 10 C75 45,70 70,50 90 Z" class="s-leaf"/><path d="M50 10 L50 90" class="s-vein"/></svg>
+        </div>
+        <div class="specimen-body">
+          <p class="specimen-number">N° 033</p>
+          <h3>Huile essentielle de tea tree</h3>
+          <p class="specimen-latin">Melaleuca alternifolia</p>
+          <p class="specimen-desc">Assainissante, à diluer selon les consignes naturelles.</p>
+          <div class="specimen-foot">
+            <span class="price">9,90 €</span>
+            <button class="btn btn-small" data-i18n="products.cards.button">Ajouter au panier</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="produits-cta">
+      <a href="#" class="btn btn-outline">Voir le catalogue complet (86 planches)</a>
+    </div>
+  </section>
+
+  <!-- ===== Notre équipe ===== -->
+  <section class="qui-sommes-nous" id="qui-sommes-nous">
+    <div class="qsn-inner">
+      <div class="qsn-text">
+        <p class="eyebrow">Notre équipe</p>
+        <h2>De la clinique au magasin d’herbes.</h2>
+        <p>
+          Naturopatra est née en 2019 dans une petite clinique de médecine naturelle à Nancy, où elle a été fondée par un conseiller en médecine naturelle et nutrition spécialisé en naturopathie, préparant lui-même les extraits recommandés à ses patients. Avec l’augmentation de la demande, l’atelier est devenu accessible en ligne sans perdre son principe initial : comprendre la personne avant de proposer la plante.
+        </p>
+        <p>
+          Aujourd’hui, l’équipe rassemble trois naturopathes certifiés et une herboriste, tous disponibles pour proposer un conseil adapté ou ajuster un traitement. Chaque produit reste lié à sa fiche source : lieu de cueillette, méthode de préparation et date de contrôle qualité.
+        </p>
+        <div class="qsn-values">
+          <div class="value">
+            <h4>Traçabilité</h4>
+            <p>Chaque lot est numéroté et son origine est affichée sur la fiche produit.</p>
+          </div>
+          <div class="value">
+            <h4>Pas de promesses exagérées</h4>
+            <p>Nous décrivons les usages traditionnels, pas les diagnostics.</p>
+          </div>
+          <div class="value">
+            <h4>Conseil humain</h4>
+            <p>Un naturopathe répond à chaque message dans les 24 heures ouvrées.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qsn-figure" aria-hidden="true">
+        <svg viewBox="0 0 260 320" class="figure-illustration">
+          <rect x="10" y="10" width="240" height="300" class="figure-frame"/>
+          <path d="M130 250 C90 230,70 180,90 120 C110 140,120 170,130 200 C140 170,150 140,170 120 C190 180,170 230,130 250 Z" class="leaf-fill"/>
+          <path d="M130 130 L130 250" class="leaf-vein"/>
+          <text x="130" y="285" text-anchor="middle" class="plate-label">Depuis 2019</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Confiance ===== -->
+  <section class="reassurance">
+    <ul>
+      <li><strong>Source documentée</strong><span>Numéro de lot et origine sur chaque fiche produit</span></li>
+      <li><strong>Consultation naturelle</strong><span>Réponse sous 24 heures ouvrées</span></li>
+      <li><strong>Livraison en 48 heures</strong><span>en France</span></li>
+      <li><strong>Sans engagement</strong><span>Retour possible sous 14 jours</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ===== Contact ===== -->
+<section class="contact-bar" id="contact">
+  <div class="contact-inner">
+    <div class="contact-intro">
+      <p class="eyebrow">Contact</p>
+      <h2>Une question avant de commander ?</h2>
+      <p>Envoyez-nous un message ou appelez la clinique — vous serez répondu par un naturopathe qualifié, pas par un robot.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+      </div>
+      <div class="form-row">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-row form-row-full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="Votre question..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer le message</button>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+
+    <div class="contact-details">
+      <div>
+        <h4>Téléphone</h4>
+        <p><a href="tel:+33383000000">03 83 00 00 00</a></p>
+      </div>
+      <div>
+        <h4>E-mail</h4>
+        <p><a href="mailto:contact@racines-seve.fr">contact@racines-seve.fr</a></p>
+      </div>
+      <div>
+        <h4>Horaires</h4>
+        <p>Du lundi au vendredi, de 9h à 18h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pied de page ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">Naturopatra</span>
+      <p>Médecine naturelle et remèdes à base de plantes, préparés à Nancy depuis 2025.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Plan du site" data-i18n-target="aria-label" data-i18n="footer.navLabel">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#presentation">À propos</a></li>
+          <li><a href="#produits">Produits</a></li>
+          <li><a href="#qui-sommes-nous">Notre équipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Informations</h5>
+        <ul>
+          <li><a href="#">Livraison et retours</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Conditions générales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Suivre les herbes</h5>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Naturopatra — les informations de ce site ne remplacent pas un avis médical.</p>
+  </div>
+</footer>
+
+<script>
+// =========================================================
+// Naturopatra — programme principal
+// =========================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const translations = {
+    fr: {
+      pageTitle: 'Naturopatra — Médecine naturelle et remèdes à base de plantes',
+      metaDescription: 'Naturopatra — produits de médecine naturelle sélectionnés avec soin : herbes, huiles essentielles, teintures mères et compléments botaniques.',
+      topbar: 'Découvrez nos derniers produits disponibles dès maintenant !',
+      header: {
+        navLabel: 'Navigation principale',
+        catalog: 'Voir le catalogue',
+        burger: 'Ouvrir le menu',
+        languageSwitcherLabel: 'Sélecteur de langue'
+      },
+      nav: {
+        accueil: 'Accueil',
+        presentation: 'À propos',
+        produits: 'Produits',
+        'qui-sommes-nous': 'Notre équipe',
+        contact: 'Contact'
+      },
+      hero: {
+        eyebrow: 'Collection d’herbes n° 01 — depuis 2019',
+        title: 'La nature<br><em>préservée</em>,<br>bouteille après bouteille.',
+        lede: 'Naturopatra sélectionne, analyse et prépare des remèdes naturels — herbes séchées, teintures mères, huiles essentielles et composés botaniques — pour accompagner le corps sans le forcer.',
+        primary: 'Découvrir les produits',
+        secondary: 'Comment ça marche',
+        plateLabel: 'Herbarium officinale',
+        plateSub: 'Échantillon n° 014 · récolté à la main',
+        plateTag: 'Planche botanique'
+      },
+      presentation: {
+        pillars: {
+          selection: { title: 'Sélection', text: 'Nous choisissons chaque plante auprès de producteurs de confiance — culture biologique ou cueillette sauvage responsable — puis nous la testons dans un laboratoire indépendant avant de l’ajouter au catalogue.' },
+          preparation: { title: 'Préparation', text: 'Séchage lent, infusion à froid et distillation douce : nos méthodes préservent les principes actifs plus que la rapidité de production.' },
+          support: { title: 'Accompagnement', text: 'Une équipe de naturopathes certifiés répond à vos questions avant et après l’achat — par message, téléphone ou en clinique.' }
+        },
+        quote: '« La médecine naturelle ne remplace pas la médecine : elle crée le terrain où le corps peut se guérir lui-même. »',
+        cite: '— Conseiller en médecine naturelle et nutrition, spécialisé en naturopathie'
+      },
+      products: {
+        eyebrow: 'Catalogue',
+        title: 'Planches de saison',
+        subtitle: 'Quatre familles de remèdes, présentées comme des pages d’herbier — source, usage et dosage sur chaque carte.',
+        filterLabel: 'Filtrer les produits',
+        filters: {
+          all: 'Tous',
+          plantes: 'Herbes séchées',
+          huiles: 'Huiles essentielles',
+          teintures: 'Teintures mères',
+          complexes: 'Composés'
+        },
+        cards: {
+          button: 'Ajouter au panier',
+          chamomile: { title: 'Camomille', desc: 'Fleurs séchées entières, apaisantes pour la digestion et un sommeil léger.' },
+          lavender: { title: 'Huile essentielle de lavande', desc: 'Distillation douce en Provence, flacon compte-gouttes de 10 ml.' },
+          echinacea: { title: 'Teinture mère d’échinacée', desc: 'Macération hydroalcoolique à froid, utile pour le soutien immunitaire.' },
+          deepsleep: { title: 'Mélange Sommeil profond', desc: 'Trois plantes associées en capsules, cycle de traitement sur 30 jours.' },
+          nettle: { title: 'Ortie', desc: 'Riche en minéraux, utilisée en infusion ou en cuisson longue.' },
+          teatree: { title: 'Huile essentielle de tea tree', desc: 'Sanitante, à diluer selon les consignes naturelles.' }
+        },
+        cta: 'Voir le catalogue complet (86 planches)'
+      },
+      team: {
+        eyebrow: 'Notre équipe',
+        title: 'De la clinique au magasin d’herbes.',
+        paragraph1: 'Naturopatra est née en 2019 dans une petite clinique de médecine naturelle à Nancy, où elle a été fondée par un conseiller en médecine naturelle et nutrition spécialisé en naturopathie, et préparait lui-même les extraits qu’il recommandait à ses patients. Avec la hausse de la demande, l’atelier est devenu accessible en ligne sans perdre son principe fondamental : comprendre.',
+        paragraph2: 'Aujourd’hui, l’équipe comprend trois naturopathes certifiés et une herboriste, toutes et tous disponibles pour proposer un conseil adapté ou ajuster un traitement. Chaque produit reste lié à sa fiche source : lieu de cueillette, méthode de préparation et date de contrôle qualité.',
+        values: {
+          trace: { title: 'Traçabilité', text: 'Chaque lot est numéroté et son origine est affichée sur la fiche produit.' },
+          honesty: { title: 'Pas de promesses exagérées', text: 'Nous décrivons les usages traditionnels, pas les diagnostics.' },
+          human: { title: 'Conseil humain', text: 'Un naturopathe répond à chaque message dans les 24 heures ouvrées.' }
+        },
+        figureLabel: 'Depuis 2019'
+      },
+      reassurance: {
+        items: {
+          0: { title: 'Source documentée', text: 'Numéro de lot et origine sur chaque fiche produit' },
+          1: { title: 'Consultation naturelle', text: 'Réponse sous 24 heures ouvrées' },
+          2: { title: 'Livraison en 48 heures', text: 'en France' },
+          3: { title: 'Sans engagement', text: 'Retour possible sous 14 jours' }
+        }
+      },
+      contact: {
+        eyebrow: 'Contact',
+        title: 'Une question avant de commander ?',
+        intro: 'Envoyez-nous un message ou appelez la clinique — vous serez répondu par un naturopathe qualifié, pas par un robot.',
+        form: {
+          name: 'Nom',
+          namePlaceholder: 'Votre nom',
+          email: 'E-mail',
+          emailPlaceholder: 'vous@example.com',
+          message: 'Message',
+          messagePlaceholder: 'Votre question...',
+          submit: 'Envoyer le message'
+        },
+        details: {
+          phone: { title: 'Téléphone', value: '03 83 00 00 00' },
+          email: { title: 'E-mail', value: 'contact@racines-seve.fr' },
+          hours: { title: 'Horaires', value: 'Du lundi au vendredi, de 9h à 18h' }
+        }
+      },
+      footer: {
+        brand: 'Naturopatra',
+        description: 'Médecine naturelle et remèdes à base de plantes, préparés à Nancy depuis 2025.',
+        navLabel: 'Plan du site',
+        sections: {
+          site: 'Site',
+          info: 'Informations',
+          follow: 'Suivre les herbes'
+        },
+        links: {
+          home: 'Accueil',
+          about: 'À propos',
+          products: 'Produits',
+          team: 'Notre équipe',
+          shipping: 'Livraison et retours',
+          disclaimer: 'Mentions légales',
+          privacy: 'Politique de confidentialité',
+          terms: 'Conditions générales',
+          instagram: 'Instagram'
+        },
+        copyright: '© 2026 Naturopatra — les informations de ce site ne remplacent pas un avis médical.'
+      },
+      formRequired: 'Veuillez remplir tous les champs.',
+      formSuccess: 'Merci {name}, votre message a bien été reçu — nous vous répondrons dans les 24 heures ouvrées.'
+    }
+  };
+
+  const getValue = (obj, path) => {
+    return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj);
+  };
+
+  const applyLanguage = (lang) => {
+    if (!translations[lang]) {
+      lang = 'fr';
+    }
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = 'ltr';
+    document.body.dataset.lang = lang;
+    document.title = t.pageTitle;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', t.metaDescription);
+    localStorage.setItem('naturopatra-lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const value = getValue(t, el.dataset.i18n);
+      if (value === undefined) return;
+      const target = el.dataset.i18nTarget || 'text';
+      if (target === 'html') {
+        el.innerHTML = value;
+      } else if (target === 'placeholder') {
+        el.placeholder = value;
+      } else if (target === 'aria-label') {
+        el.setAttribute('aria-label', value);
+      } else {
+        el.textContent = value;
+      }
+    });
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+      btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+    });
+  };
+
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+
+  const savedLang = localStorage.getItem('naturopatra-lang') || 'fr';
+  applyLanguage(savedLang);
+
+  /* ---------- menu mobile ---------- */
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('main-nav');
+
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ---------- onglet actif selon la section visible ---------- */
+  const sections = ['accueil', 'presentation', 'produits', 'qui-sommes-nous', 'contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const setActive = (id) => {
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.tab === id);
+    });
+  };
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  /* ---------- filtres produits ---------- */
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.specimen-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.cat === filter;
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
+
+  /* ---------- formulaire de contact ---------- */
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nom = form.nom.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!nom || !email || !message) {
+        status.textContent = 'Veuillez remplir tous les champs.';
+        return;
+      }
+
+      // place for a real backend or Formspree integration
+      status.textContent = `Merci ${nom}, votre message a bien été reçu — nous vous répondrons dans les 24 heures ouvrées.`;
+      form.reset();
+    });
+  }
+
+});
+</script>
+</body>
+</html>

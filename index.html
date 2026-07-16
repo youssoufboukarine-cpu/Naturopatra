@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naturopatra Santé Intégrative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --green-sage: #a9b99a;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 1em 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- HEADER ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      .logo-link {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .logo-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--green-deep);
+      }
+      .logo-subtitle {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--ink-soft);
+        margin-left: 4px;
+      }
+      .main-nav {
+        display: flex;
+        gap: 34px;
+      }
+      .main-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.4px;
+        color: var(--ink);
+        transition: color 0.2s;
+      }
+      .main-nav a:hover {
+        color: var(--green-deep);
+      }
+      .header-icons {
+        display: flex;
+        gap: 16px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px;
+      }
+      .icon-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        text-align: center;
+        padding: 56px 0 40px;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+        letter-spacing: 0.3px;
+      }
+      .hero-sub {
+        color: var(--ink-soft);
+        font-size: 1.02rem;
+        margin: 14px 0 22px;
+      }
+      .divider {
+        display: inline-block;
+        width: 56px;
+        height: 2px;
+        background: var(--green-mid);
+      }
+      .divider.small {
+        width: 42px;
+        margin: 14px 0;
+      }
+      .divider.center {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      /* ---------- CAROUSEL ---------- */
+      .carousel-section {
+        padding-bottom: 36px;
+      }
+      .carousel-wrap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .carousel-arrow {
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--white);
+        font-size: 1.3rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        transition: background 0.2s;
+        user-select: none;
+        z-index: 5;
+      }
+      .carousel-arrow:hover {
+        background: var(--cream-2);
+      }
+      .carousel-container {
+        flex: 1;
+        overflow: hidden;
+      }
+      .carousel-track {
+        display: flex;
+        gap: 22px;
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.35, 1);
+
+        /* Astuces de fluidité matérielle : */
+        will-change: transform; /* Prépare le GPU à animer cette piste */
+        backface-visibility: hidden; /* Évite les micro-clignotements en fin de transition */
+      }
+
+      /* CARTES DU CAROUSEL AVEC BALISE IMG ABSOLUE */
+      .carousel-card {
+        flex: 0 0 calc(33.333% - 14.67px); /* 3 colonnes par défaut */
+        min-height: 310px;
+        border-radius: 6px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 14px;
+        color: var(--white);
+        overflow: hidden;
+        position: relative;
+      }
+      /* Le dégradé sombre est appliqué ici par-dessus l'image */
+      .carousel-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(20, 16, 12, 0.15) 0%,
+          rgba(20, 16, 12, 0.75) 100%
+        );
+        z-index: 2;
+      }
+      .carousel-card .card-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      /* Tous les éléments textes/boutons sont forcés au-dessus du dégradé */
+      .carousel-card > *:not(.card-img) {
+        position: relative;
+        z-index: 3;
+      }
+      .carousel-card h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        font-weight: 600;
+      }
+      .tag {
+        align-self: flex-start;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        font-size: 0.68rem;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        padding: 10px 18px;
+        border-radius: 4px;
+        font-size: 0.82rem;
+        letter-spacing: 0.3px;
+        transition:
+          transform 0.15s,
+          background 0.2s;
+      }
+      .btn-light {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .btn-light:hover {
+        transform: translateY(-2px);
+      }
+      .btn-dark {
+        background: var(--green-deep);
+        color: var(--white);
+      }
+      .btn-dark:hover {
+        background: #2d3728;
+      }
+      .btn-dark.small {
+        padding: 9px 22px;
+        font-size: 0.8rem;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+      }
+
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--line);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .dot.active {
+        background: var(--green-deep);
+        width: 20px;
+        border-radius: 4px;
+      }
+
+      /* ---------- ABOUT ---------- */
+      .about {
+        background: var(--cream-2);
+        padding: 80px 0;
+      }
+      .about-inner {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about-photo {
+        border-radius: 6px;
+        height: 460px;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+      }
+      .eyebrow {
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        color: var(--green-mid);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .eyebrow.center {
+        text-align: center;
+      }
+      .about-text h2 {
+        font-size: 2.1rem;
+        margin-bottom: 2px;
+      }
+      .about-text p {
+        margin-top: 18px;
+      }
+
+      /* ---------- PROTOCOLS ---------- */
+      .protocols {
+        padding: 40px 0;
+      }
+      .section-heading {
+        text-align: center;
+        max-width: 560px;
+        margin: 0 auto 50px;
+      }
+      .section-heading h2 {
+        font-size: 2.1rem;
+      }
+      .section-sub {
+        margin-top: 18px;
+      }
+      .protocol-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 26px;
+      }
+      .protocol-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        padding-bottom: 24px;
+        text-align: center;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .protocol-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 30px -18px rgba(0, 0, 0, 0.2);
+      }
+      .protocol-photo {
+        height: 190px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 0;
+      }
+      .protocol-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .protocol-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green-deep);
+        transform: translateY(50%);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+      }
+      .protocol-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+      .protocol-card h3 {
+        font-size: 1.15rem;
+        margin: 38px 20px 12px;
+        line-height: 1.3;
+      }
+      .protocol-card p {
+        font-size: 0.88rem;
+        margin: 0 24px 20px;
+      }
+      .see-all {
+        text-align: center;
+        margin-top: 44px;
+      }
+
+      /* ---------- FEATURES ---------- */
+      .features {
+        background: var(--cream-2);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 44px 0;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .feature svg {
+        width: 28px;
+        height: 28px;
+        color: var(--green-deep);
+        flex-shrink: 0;
+      }
+      .feature strong {
+        display: block;
+        font-size: 0.92rem;
+        color: var(--ink);
+      }
+      .feature span {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- FOOTER ---------- */
+      .site-footer {
+        background: var(--green-deep);
+        color: #dfe3da;
+        padding: 64px 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .footer-brand h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        color: #c3c9bc;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 0.87rem;
+        color: #c3c9bc;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .newsletter p {
+        color: #c3c9bc;
+        font-size: 0.85rem;
+      }
+      .newsletter-form {
+        display: flex;
+        margin: 14px 0 18px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+      }
+      .newsletter-form button {
+        background: var(--gold);
+        border: none;
+        color: var(--white);
+        padding: 0 16px;
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-icons svg {
+        width: 15px;
+        height: 15px;
+        color: var(--white);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a9b09f;
+        padding: 22px 0;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 960px) {
+        .main-nav {
+          display: none;
+        }
+        .carousel-card {
+          flex: 0 0 calc(50% - 11px); /* 2 colonnes sur tablette */
+        }
+        .about-inner {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .about-photo {
+          height: 320px;
+        }
+        .protocol-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .hero h1 {
+          font-size: 1.9rem;
+        }
+        .carousel-card {
+          flex: 0 0 100%; /* 1 colonne sur mobile */
+        }
+        .protocol-grid {
+          grid-template-columns: 1fr;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .carousel-arrow {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo-link">
+          <div class="logo">
+            <svg
+              class="logo-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2C12 2 17 6 17 11C17 15.5 14 18.5 12 21.5C10 18.5 7 15.5 7 11C7 6 12 2 12 2Z"
+              />
+              <path d="M12 21.5V11" />
+              <path d="M12 11c1.5-.5 3-.5 4.5.5" />
+              <path d="M12 14.5c-1.5-.5-3-.5-4.5.5" />
+            </svg>
+            <span>Naturopatra <span class="logo-subtitle"></span></span>
+          </div>
+        </a>
+        <nav class="main-nav">
+          <a href="#">Accueil</a>
+          <a href="#">Articles</a>
+          <a href="#">Protocoles</a>
+          <a href="#">À propos</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <button aria-label="Rechercher" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <button aria-label="Panier" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M6 6h15l-1.5 9h-12z" />
+              <path d="M6 6L4 2H2" />
+              <circle cx="9" cy="20" r="1" />
+              <circle cx="17" cy="20" r="1" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="naturopatra-section">
+      <h1 class="naturopatra-title">Naturopatra</h1>
+    </section>
+
+    <style>
+      /* Importation d'une police élégante depuis Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap");
+
+      .naturopatra-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0px 20px;
+        background: radial-gradient(circle, #ffffff 0%, #fff7e4 100%);
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      .naturopatra-title {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        /* Dégradé de vert forêt à vert d'eau */
+        background: linear-gradient(135deg, #2d5a27 0%, #6e8e74 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        padding-bottom: 10px;
+      }
+
+      /* Ligne d'accentuation dorée sous le titre */
+      .naturopatra-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #c5a880; /* Or doux */
+        margin: 15px auto 0 auto;
+        border-radius: 2px;
+      }
+
+      .naturopatra-subtitle {
+        font-size: 1rem;
+        color: #616b62;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-top: 15px;
+        font-weight: 400;
+      }
+
+      /* Adaptation pour les écrans de téléphones */
+      @media (max-width: 600px) {
+        .naturopatra-title {
+          font-size: 2.8rem;
+        }
+        .naturopatra-subtitle {
+          font-size: 0.85rem;
+          letter-spacing: 2px;
+        }
+      }
+      .banner {
+        width: 100%;
+        height: 100px; /* Hauteur de la bannière */
+        overflow: hidden;
+      }
+      .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* L'image remplit toute la section */
+        display: block;
+      }
+    </style>
+
+    <section class="banner">
+      <img src="images/barre.jpeg" alt="Bannière" />
+    </section>
+
+    <!-- PROTOCOLS -->
+    <section class="protocols">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Découvrez mes protocoles</h2>
+          <span class="divider small center"></span>
+          <p class="section-sub">
+            Des programmes complets et personnalisés pour soutenir votre santé
+            naturellement.
+          </p>
+        </div>
+
+        <div class="protocol-grid">
+          <!-- CARD 1 -->
+          <div class="protocol-card">
+            <div class="protocol-photo">
+              <img
+                src="images/digestion.jpg"
+                alt="Santé Digestive"
+                class="protocol-img"
+              />
+              <span class="protocol-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 2c2 0 3 1.5 3 3s-1 2-1 3 1 1.5 1 3-1.5 3-3 3-2-1-3-1-2.5 1-4 1-3-1.5-3-3 1-2 1-3-1-2-1-3 1.5-3 3-3 2 1 3 1 2-1 4-1z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h3>Protocole<br />Santé Digestive</h3>
+            <p>
+              Améliorer la digestion, réduire les ballonnements et restaurer
+              l'équilibre intestinal.
+            </p>
+            <a href="#" class="btn btn-dark small">Découvrir</a>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="protocol-card">
+            <div class="protocol-photo">
+              <img
+                src="images/hormone.jpg"
+                alt="Équilibre Hormonal"
+                class="protocol-img"
+              />
+              <span class="protocol-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h3>Protocole<br />Équilibre Hormonal</h3>
+            <p>
+              Soutenir l'équilibre hormonal féminin à chaque étape de la vie.
+            </p>
+            <a href="#" class="btn btn-dark small">Découvrir</a>
+          </div>
+
+          <!-- CARD 3 (GESTION DU STRESS AVEC L'IMAGE ZEN DANS IMAGES/) -->
+          <div class="protocol-card">
+            <div class="protocol-photo">
+              <img
+                src="images/stress-protocole.jpg"
+                alt="Méditation de gestion du stress"
+                class="protocol-img"
+              />
+              <span class="protocol-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h3>Protocole<br />Gestion du Stress</h3>
+            <p>
+              Réguler le stress, apaiser le système nerveux et retrouver calme
+              et énergie.
+            </p>
+            <a href="#" class="btn btn-dark small">Découvrir</a>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="protocol-card">
+            <div class="protocol-photo">
+              <img
+                src="images/energie.jpg"
+                alt="Énergie et force"
+                class="protocol-img"
+              />
+              <span class="protocol-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" />
+                </svg>
+              </span>
+            </div>
+            <h3>Protocole<br />Énergie &amp; Vitalité</h3>
+            <p>
+              Retrouver de l'énergie durable et optimiser ses fonctions
+              physiologiques.
+            </p>
+            <a href="#" class="btn btn-dark small">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="see-all">
+          <a href="#" class="btn btn-outline"
+            >Voir tous les protocoles &nbsp;→</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="container about-inner">
+        <!-- PORTRAIT AVEC BALISE IMG CLASSIQUE -->
+        <img
+          class="about-photo"
+          src="images/portrait.jpg"
+          alt="Portrait de Patra"
+        />
+        <div class="about-text">
+          <span class="eyebrow">À PROPOS DE MOI</span>
+          <h2>Je m'appelle Patra</h2>
+          <span class="divider small"></span>
+          <p>Je suis diplômée en naturopathie et santé intégrative.</p>
+          <p>
+            Ma mission est d'accompagner chaque personne vers un équilibre
+            durable, en identifiant les causes profondes des déséquilibres et en
+            proposant des solutions personnalisées, fondées sur la science et
+            adaptées à votre mode de vie.
+          </p>
+          <p>
+            À travers ce site, je partage des informations fiables, fondées sur
+            les connaissances scientifiques actuelles, afin d'aider chacun à
+            mieux comprendre sa santé et à adopter un mode de vie favorable au
+            bien-être.
+          </p>
+          <a href="#" class="btn btn-dark">En savoir plus sur moi &nbsp;→</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROUSEL (DÉFILANT ET AUTOPLAY) -->
+    <section class="carousel-section">
+      <div class="container carousel-wrap">
+        <button class="carousel-arrow prev" aria-label="Précédent">
+          &#8249;
+        </button>
+
+        <div class="carousel-container">
+          <br />
+          <h2>Nos articles</h2>
+          <br />
+          <div class="carousel-track">
+            <!-- Article 1 -->
+            <article class="carousel-card">
+              <img
+                src="images/sommeil.jpg"
+                alt="Sommeil de qualité"
+                class="card-img"
+              />
+              <span class="tag">SOMMEIL</span>
+              <h3>
+                Améliorer la qualité<br />de son sommeil<br />naturellement
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="carousel-card">
+              <img
+                src="images/activite-physique.jpg"
+                alt="Yoga et sport"
+                class="card-img"
+              />
+              <span class="tag">ACTIVITÉ PHYSIQUE</span>
+              <h3>
+                Bouger chaque jour :<br />le meilleur médicament<br />préventif
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="carousel-card">
+              <img
+                src="images/nutrition.jpg"
+                alt="Alimentation saine"
+                class="card-img"
+              />
+              <span class="tag">NUTRITION</span>
+              <h3>
+                Alimentation<br />anti-inflammatoire :<br />les bases
+                indispensables
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="carousel-card">
+              <img
+                src="images/stress.jpg"
+                alt="Apaiser son stress"
+                class="card-img"
+              />
+              <span class="tag">STRESS &amp; SÉRÉNITÉ</span>
+              <h3>
+                Apaiser son système<br />nerveux au quotidien<br />par des
+                gestes simples
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="carousel-card">
+              <img
+                src="images/microbiote.jpg"
+                alt="Microbiote"
+                class="card-img"
+              />
+              <span class="tag">SANTÉ INTESTINALE</span>
+              <h3>
+                Le microbiote :<br />le pilier central de votre<br />système
+                immunitaire
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="carousel-card">
+              <img
+                src="images/phytotherapie.jpg"
+                alt="Plantes médicinales"
+                class="card-img"
+              />
+              <span class="tag">PHYTOTHÉRAPIE</span>
+              <h3>
+                Les plantes adaptogènes :<br />votre bouclier naturel<br />contre
+                la fatigue
+              </h3>
+              <a href="#" class="btn btn-light">Lire l'article &nbsp;→</a>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel-arrow next" aria-label="Suivant">
+          &#8250;
+        </button>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="container features-grid">
+        <div class="feature">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <path d="M9 2v6l-5 9a2 2 0 002 3h12a2 2 0 002-3l-5-9V2" />
+            <path d="M9 2h6" />
+          </svg>
+          <div>
+            <strong>Approche scientifique</strong>
+            <span>Fondée sur les preuves</span>
+          </div>
+        </div>
+        <div class="feature">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <circle cx="12" cy="7" r="4" />
+            <path d="M5 21v-2a7 7 0 0114 0v2" />
+          </svg>
+          <div>
+            <strong>Accompagnement</strong>
+            <span>personnalisé</span>
+          </div>
+        </div>
+        <div class="feature">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
+          </svg>
+          <div>
+            <strong>Santé préventive</strong>
+            <span>et durable</span>
+          </div>
+        </div>
+        <div class="feature">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <path d="M4 4v16M4 4h11l-1 4 1 4H4" />
+          </svg>
+          <div>
+            <strong>Éducation &amp; autonomie</strong>
+            <span>Pour reprendre le pouvoir sur votre santé</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Patra<br />Santé Intégrative</h3>
+          <p>
+            La naturopathie fondée sur les preuves au service de votre santé.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#">Accueil</a>
+          <a href="#">Articles</a>
+          <a href="#">Protocoles</a>
+          <a href="#">À propos</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <a href="#">Blog</a>
+          <a href="#">FAQ</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+        <div class="footer-col newsletter">
+          <h4>Restez connectés</h4>
+          <p>Recevez des conseils et des contenus exclusifs chaque semaine.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre e-mail" required />
+            <button type="submit" aria-label="S'inscrire">➤</button>
+          </form>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" /></svg
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  d="M14 9h3V6h-3a3 3 0 00-3 3v2H9v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 011-1z"
+                /></svg
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="3" />
+                <path d="M10 9l5 3-5 3z" /></svg
+            ></a>
+            <a href="#" aria-label="Email"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M2 6l10 7 10-7" /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 Patra Santé Intégrative — Tous droits réservés
+      </div>
+    </footer>
+
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const cards = document.querySelectorAll(".carousel-card");
+      const prevBtn = document.querySelector(".carousel-arrow.prev");
+      const nextBtn = document.querySelector(".carousel-arrow.next");
+      const dots = document.querySelectorAll(".dot");
+      const carouselContainer = document.querySelector(".carousel-container");
+
+      let currentIndex = 0;
+      let autoplayTimer = null;
+
+      function getVisibleCardsCount() {
+        if (window.innerWidth <= 560) return 1;
+        if (window.innerWidth <= 960) return 2;
+        return 3;
+      }
+
+      function updateCarousel() {
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const gap = 22;
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = cards.length - visibleCards;
+
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        if (currentIndex < 0) currentIndex = 0;
+
+        const amountToMove = currentIndex * (cardWidth + gap);
+        track.style.transform = `translateX(-${amountToMove}px)`;
+
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentIndex);
+          if (idx > maxIndex) {
+            dot.style.display = "none";
+          } else {
+            dot.style.display = "inline-block";
+          }
+        });
+      }
+
+      function nextSlide() {
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = cards.length - visibleCards;
+
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = cards.length - visibleCards;
+
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = maxIndex;
+        }
+        updateCarousel();
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, 3000);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+        }
+      }
+
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        startAutoplay();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        startAutoplay();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel();
+          startAutoplay();
+        });
+      });
+
+      carouselContainer.addEventListener("mouseenter", stopAutoplay);
+      carouselContainer.addEventListener("mouseleave", startAutoplay);
+
+      window.addEventListener("resize", updateCarousel);
+      window.addEventListener("load", () => {
+        updateCarousel();
+        startAutoplay();
+      });
+
+      updateCarousel();
+      startAutoplay();
+    </script>
+  </body>
+</html>

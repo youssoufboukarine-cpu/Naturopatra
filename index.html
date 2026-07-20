@@ -285,6 +285,8 @@
         transition:
           transform 0.15s,
           background 0.2s;
+        border: none;
+        cursor: pointer;
       }
       .btn-light {
         background: var(--white);
@@ -450,6 +452,122 @@
         margin-top: 44px;
       }
 
+      /* ---------- AJOUT ET ZONE GESTION PRODUITS (SUPABASE) ---------- */
+      .products-section {
+        padding: 60px 0;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+      }
+      .admin-box {
+        background: var(--cream-2);
+        border: 1px dashed var(--gold);
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+      .admin-box h2 {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        color: var(--green-deep);
+      }
+      .admin-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) auto;
+        gap: 16px;
+        align-items: end;
+      }
+      .admin-form input {
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        background: var(--white);
+        outline: none;
+      }
+      .admin-form button {
+        background: var(--green-deep);
+        color: var(--white);
+        border: none;
+        padding: 11px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      .admin-form button:hover {
+        background: #2d3728;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 26px;
+      }
+      .product-card {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+      }
+      .product-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        font-family: var(--font-display);
+      }
+      .product-card p {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        flex-grow: 1;
+      }
+      .product-price {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green-deep);
+        margin-bottom: 14px;
+      }
+      .admin-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+      }
+      .btn-admin-del {
+        background: #c94c4c;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-family: var(--font-body);
+      }
+      .btn-admin-edit {
+        background: var(--gold);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-family: var(--font-body);
+      }
+      .hidden {
+        display: none !important;
+      }
+
       /* ---------- FEATURES ---------- */
       .features {
         background: var(--cream-2);
@@ -580,7 +698,7 @@
           display: none;
         }
         .carousel-card {
-          flex: 0 0 calc(50% - 11px); /* 2 colonnes sur tablette */
+          flex: 0 0 calc(50% - 11px);
         }
         .about-inner {
           grid-template-columns: 1fr;
@@ -589,7 +707,8 @@
         .about-photo {
           height: 320px;
         }
-        .protocol-grid {
+        .protocol-grid,
+        .product-grid {
           grid-template-columns: repeat(2, 1fr);
         }
         .features-grid {
@@ -604,9 +723,13 @@
           font-size: 1.9rem;
         }
         .carousel-card {
-          flex: 0 0 100%; /* 1 colonne sur mobile */
+          flex: 0 0 100%;
         }
-        .protocol-grid {
+        .protocol-grid,
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        .admin-form {
           grid-template-columns: 1fr;
         }
         .features-grid {
@@ -655,7 +778,6 @@
             </svg>
           </button>
 
-          <!-- Modification ici : bouton remplacé par une balise 'a' avec la pastille -->
           <a href="pages/boutique.html" aria-label="Panier" class="icon-btn">
             <svg
               viewBox="0 0 24 24"
@@ -679,7 +801,6 @@
     </section>
 
     <style>
-      /* Importation d'une police élégante depuis Google Fonts */
       @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap");
 
       .naturopatra-section {
@@ -698,7 +819,6 @@
         font-size: 4rem;
         font-weight: 700;
         letter-spacing: 2px;
-        /* Dégradé de vert forêt à vert d'eau */
         background: linear-gradient(135deg, #2d5a27 0%, #6e8e74 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -706,13 +826,12 @@
         padding-bottom: 10px;
       }
 
-      /* Ligne d'accentuation dorée sous le titre */
       .naturopatra-title::after {
         content: "";
         display: block;
         width: 60px;
         height: 3px;
-        background-color: #c5a880; /* Or doux */
+        background-color: #c5a880;
         margin: 15px auto 0 auto;
         border-radius: 2px;
       }
@@ -726,7 +845,6 @@
         font-weight: 400;
       }
 
-      /* Adaptation pour les écrans de téléphones */
       @media (max-width: 600px) {
         .naturopatra-title {
           font-size: 2.8rem;
@@ -738,13 +856,13 @@
       }
       .banner {
         width: 100%;
-        height: 100px; /* Hauteur de la bannière */
+        height: 100px;
         overflow: hidden;
       }
       .banner img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* L'image remplit toute la section */
+        object-fit: cover;
         display: block;
       }
     </style>
@@ -829,7 +947,7 @@
             >
           </div>
 
-          <!-- CARD 3 (GESTION DU STRESS AVEC L'IMAGE ZEN DANS IMAGES/) -->
+          <!-- CARD 3 -->
           <div class="protocol-card">
             <div class="protocol-photo">
               <img
@@ -898,10 +1016,69 @@
       </div>
     </section>
 
+    <!-- SECTION DYNAMIQUE PRODUITS (SUPABASE) -->
+    <section class="products-section">
+      <div class="container">
+        <!-- Zone Administrateur (Masquée par défaut) -->
+        <div id="admin-panel" class="admin-box hidden">
+          <h2>🛠️ Espace de Gestion (Admin)</h2>
+          <form id="form-produit" class="admin-form">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Nom du produit :</label
+              >
+              <input
+                type="text"
+                id="p-nom"
+                placeholder="Ex: Huile Essentielle"
+                required
+              />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Description :</label
+              >
+              <input
+                type="text"
+                id="p-desc"
+                placeholder="Ex: Bio et relaxante..."
+              />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Prix (€) :</label
+              >
+              <input
+                type="number"
+                id="p-prix"
+                placeholder="Ex: 14.90"
+                step="0.01"
+                required
+              />
+            </div>
+            <button type="submit">Ajouter le produit</button>
+          </form>
+        </div>
+
+        <!-- Zone d'affichage publique -->
+        <div class="section-heading">
+          <h2>Ma Boutique Bien-être</h2>
+          <span class="divider small center"></span>
+          <p class="section-sub">
+            Sélection de produits naturels de haute qualité pour votre hygiène
+            de vie.
+          </p>
+        </div>
+
+        <div id="liste-produits" class="product-grid">
+          <!-- Les produits de Supabase s'afficheront ici de façon dynamique -->
+        </div>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section class="about">
       <div class="container about-inner">
-        <!-- PORTRAIT AVEC BALISE IMG CLASSIQUE -->
         <img
           class="about-photo"
           src="images/portrait.jpg"
@@ -931,7 +1108,7 @@
       </div>
     </section>
 
-    <!-- CAROUSEL (DÉFILANT ET AUTOPLAY) -->
+    <!-- CAROUSEL -->
     <section class="carousel-section">
       <div class="container carousel-wrap">
         <button class="carousel-arrow prev" aria-label="Précédent">
@@ -1199,8 +1376,164 @@
       </div>
     </footer>
 
+    <!-- SDK SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
-      // GESTION DU CARROUSEL
+      // CONFIGURATION SUPABASE & ADMIN ATOMIQUE
+      const SUPABASE_URL = "https://ymevvaeyxoxwomfdihib.supabase.co/rest/v1/";
+      const SUPABASE_ANON_KEY =
+        "sb_publishable_J8secXf4UfTMS6WqnLLtkg_RVQwhYjf";
+      const ADMIN_EMAIL = "bayan.barafi@gmail.com";
+
+      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      const adminPanel = document.getElementById("admin-panel");
+      const productForm = document.getElementById("form-produit");
+      const productGrid = document.getElementById("liste-produits");
+
+      // Fonction principale de vérification admin & chargement
+      async function verifierAdminEtProduits() {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        const user = session?.user || null;
+        const estAdmin = user && user.email === ADMIN_EMAIL;
+
+        // Toggle visuel de la zone admin
+        if (estAdmin) {
+          adminPanel.classList.remove("hidden");
+        } else {
+          adminPanel.classList.add("hidden");
+        }
+
+        chargerProduitsBoutique(estAdmin);
+      }
+
+      // Charger et afficher les produits
+      async function chargerProduitsBoutique(estAdmin) {
+        const { data: products, error } = await supabase
+          .from("products")
+          .select("*")
+          .order("created_at", { ascending: false });
+
+        if (error) {
+          console.error("Erreur de chargement des produits:", error.message);
+          return;
+        }
+
+        productGrid.innerHTML = "";
+
+        if (products.length === 0) {
+          productGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--ink-soft); padding: 20px;">Aucun produit n'est disponible pour le moment.</p>`;
+          return;
+        }
+
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+
+          let boutonsAdmin = "";
+          if (estAdmin) {
+            boutonsAdmin = `
+              <div class="admin-actions">
+                <button class="btn-admin-edit" onclick="modifierPrixProduit(${product.id}, ${product.prix})">Modifier Prix</button>
+                <button class="btn-admin-del" onclick="supprimerProduitBoutique(${product.id})">Supprimer</button>
+              </div>
+            `;
+          }
+
+          card.innerHTML = `
+            <div>
+              <h3>${product.nom}</h3>
+              <p>${product.description || "Aucune description fournie."}</p>
+            </div>
+            <div>
+              <div class="product-price">${parseFloat(product.prix).toFixed(2)} €</div>
+              <button class="btn btn-dark small" style="width: 100%; justify-content: center;" onclick="ajouterAuPanierBoutique(${product.id}, '${product.nom.replace(/'/g, "\\'")}', ${product.prix})">Ajouter au panier</button>
+              ${boutonsAdmin}
+            </div>
+          `;
+          productGrid.appendChild(card);
+        });
+      }
+
+      // Ajouter un produit (Admin)
+      if (productForm) {
+        productForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const nom = document.getElementById("p-nom").value;
+          const description = document.getElementById("p-desc").value;
+          const prix = parseFloat(document.getElementById("p-prix").value);
+
+          const { error } = await supabase
+            .from("products")
+            .insert([{ nom, description, prix }]);
+
+          if (error) {
+            alert("Erreur d'ajout : " + error.message);
+          } else {
+            productForm.reset();
+            verifierAdminEtProduits();
+          }
+        });
+      }
+
+      // Supprimer un produit (Admin)
+      window.supprimerProduitBoutique = async function (id) {
+        if (
+          confirm("Voulez-vous vraiment supprimer ce produit de la boutique ?")
+        ) {
+          const { error } = await supabase
+            .from("products")
+            .delete()
+            .eq("id", id);
+          if (error) alert("Erreur : " + error.message);
+          else verifierAdminEtProduits();
+        }
+      };
+
+      // Modifier le prix d'un produit (Admin)
+      window.modifierPrixProduit = async function (id, prixActuel) {
+        const nouveauPrix = prompt("Entrez le nouveau prix (€) :", prixActuel);
+        if (nouveauPrix !== null && !isNaN(parseFloat(nouveauPrix))) {
+          const { error } = await supabase
+            .from("products")
+            .update({ prix: parseFloat(nouveauPrix) })
+            .eq("id", id);
+
+          if (error) alert("Erreur : " + error.message);
+          else verifierAdminEtProduits();
+        }
+      };
+
+      // Liaison avec le localStorage du panier
+      window.ajouterAuPanierBoutique = function (id, name, price) {
+        let cart = JSON.parse(localStorage.getItem("naturo_cart")) || [];
+        const itemExistant = cart.find((item) => item.id === id);
+
+        if (itemExistant) {
+          itemExistant.quantity += 1;
+        } else {
+          cart.push({ id, name, price, quantity: 1 });
+        }
+
+        localStorage.setItem("naturo_cart", JSON.stringify(cart));
+        if (typeof updateCartBadge === "function") updateCartBadge();
+        alert(`"${name}" a bien été ajouté à votre panier.`);
+      };
+
+      // Détecteur de connexion / déconnexion de l'authentification
+      supabase.auth.onAuthStateChange(() => {
+        verifierAdminEtProduits();
+      });
+
+      // Lancement automatique au chargement du DOM
+      window.addEventListener("DOMContentLoaded", () => {
+        verifierAdminEtProduits();
+      });
+
+      // GESTION DU CARROUSEL EXISTANT
       const track = document.querySelector(".carousel-track");
       const cards = document.querySelectorAll(".carousel-card");
       const prevBtn = document.querySelector(".carousel-arrow.prev");
@@ -1304,7 +1637,7 @@
       updateCarousel();
       startAutoplay();
 
-      // GESTION DU PANIER (Synchronisation avec localStorage)
+      // GESTION DU PANIER EXISTANTE
       const cartCountBadge = document.getElementById("cart-count");
 
       function getCart() {
@@ -1318,7 +1651,6 @@
         cartCountBadge.textContent = totalQty;
       }
 
-      // Initialisation de la pastille du panier au chargement de la page
       updateCartBadge();
     </script>
   </body>

@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --green-sage: #a9b99a;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 1em 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- HEADER ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      .logo-link {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .logo-icon {
+        width: 40px;
+        height: 35px;
+        color: var(--green-deep);
+      }
+      .main-nav {
+        display: flex;
+        gap: 34px;
+      }
+      .main-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.4px;
+        color: var(--ink);
+        transition: color 0.2s;
+      }
+      .main-nav a:hover,
+      .main-nav a.active {
+        color: var(--green-deep);
+        font-weight: 500;
+      }
+      .header-icons {
+        display: flex;
+        gap: 16px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .icon-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 600;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- HERO BOUTIQUE ---------- */
+      .shop-hero {
+        text-align: center;
+        padding: 60px 0 40px;
+        background: radial-gradient(circle, #ffffff 0%, #fff7e4 100%);
+        border-bottom: 1px solid var(--line);
+      }
+      .shop-hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+      }
+      .shop-hero p {
+        font-size: 1.05rem;
+        max-width: 600px;
+        margin: 15px auto 0;
+      }
+      .divider {
+        display: inline-block;
+        width: 56px;
+        height: 2px;
+        background: var(--green-mid);
+      }
+      .divider.center {
+        margin: 15px auto 0;
+        display: block;
+      }
+
+      /* ---------- SHOP / CART LAYOUT ---------- */
+      .shop-section {
+        padding: 60px 0 80px;
+        flex: 1;
+      }
+      .shop-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 50px;
+        align-items: start;
+      }
+
+      /* Liste Panier */
+      .cart-container {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 35px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+      }
+      .cart-container h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 15px;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .cart-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .item-img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+      }
+      .item-details {
+        flex: 1;
+      }
+      .item-details h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+      }
+      .item-price {
+        color: var(--green-deep);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        overflow: hidden;
+        background: var(--cream);
+      }
+      .qty-btn {
+        background: none;
+        border: none;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: background 0.2s;
+      }
+      .qty-btn:hover {
+        background: var(--line);
+      }
+      .qty-val {
+        padding: 0 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        min-width: 20px;
+        text-align: center;
+      }
+      .remove-btn {
+        background: none;
+        border: none;
+        color: #ba4a4a;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+        margin-left: 10px;
+        transition: color 0.2s;
+      }
+      .remove-btn:hover {
+        color: #8e3333;
+      }
+
+      /* Sidebar Formulaire & Résumé */
+      .checkout-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .summary-box,
+      .checkout-box {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 35px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+      }
+      .summary-box h3,
+      .checkout-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 12px;
+      }
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        font-size: 0.98rem;
+        color: var(--ink-soft);
+      }
+      .summary-row.total {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        margin-top: 16px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--green-deep);
+      }
+
+      /* Formulaire Éléments */
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        background: var(--cream);
+        transition: all 0.2s;
+      }
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--green-deep);
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(60, 74, 52, 0.1);
+      }
+      .btn-submit {
+        width: 100%;
+        background: var(--green-deep);
+        color: var(--white);
+        padding: 14px;
+        border: none;
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: 10px;
+      }
+      .btn-submit:hover {
+        background: #2d3728;
+      }
+
+      /* Panier Vide */
+      .empty-cart-msg {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .empty-cart-msg p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+      .btn-back-shop {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--white);
+        padding: 12px 28px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+      .btn-back-shop:hover {
+        background: #a38b58;
+      }
+
+      /* Écran de succès */
+      .success-message {
+        display: none;
+        text-align: center;
+        padding: 60px 40px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+      }
+      .success-message h2 {
+        color: var(--green-deep);
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+      .success-message p {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      .site-footer {
+        background: var(--green-deep);
+        color: #dfe3da;
+        padding: 64px 0 0;
+        margin-top: auto;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .footer-brand h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        color: #c3c9bc;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 0.87rem;
+        color: #c3c9bc;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .newsletter p {
+        color: #c3c9bc;
+        font-size: 0.85rem;
+      }
+      .newsletter-form {
+        display: flex;
+        margin: 14px 0 18px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+      }
+      .newsletter-form button {
+        background: var(--gold);
+        border: none;
+        color: var(--white);
+        padding: 0 16px;
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-icons svg {
+        width: 15px;
+        height: 15px;
+        color: var(--white);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a9b09f;
+        padding: 22px 0;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 860px) {
+        .main-nav {
+          display: none;
+        }
+        .shop-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .shop-hero h1 {
+          font-size: 2.2rem;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">
+            <img
+              src="../images/logo.jpg"
+              alt="Logo NaturoPatra"
+              class="logo-icon"
+            />
+            NaturoPatra
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <button aria-label="Rechercher" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <a href="boutique.html" aria-label="Panier" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M6 6h15l-1.5 9h-12z" />
+              <path d="M6 6L4 2H2" />
+              <circle cx="9" cy="20" r="1" />
+              <circle cx="17" cy="20" r="1" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO BOUTIQUE -->
+    <section class="shop-hero">
+      <div class="container">
+        <h1>Votre Panier d'Achats</h1>
+        <span class="divider center"></span>
+        <p>
+          Finalisez votre réservation et accédez immédiatement à votre protocole
+          de soin sur-mesure.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN SHOP CONTENT -->
+    <main class="shop-section">
+      <div class="container">
+        <!-- Écran succès de paiement caché par défaut -->
+        <div class="success-message" id="success-screen">
+          <h2>Commande validée !</h2>
+          <p>
+            Merci pour votre confiance. Votre paiement a été traité de manière
+            totalement sécurisée. Un e-mail récapitulatif contenant les accès
+            numériques complets à votre protocole vient de vous être envoyé.
+          </p>
+          <a href="protocoles.html" class="btn-back-shop"
+            >Découvrir d'autres protocoles</a
+          >
+        </div>
+
+        <!-- Grille Panier + Formulaire -->
+        <div class="shop-grid" id="main-shop-grid">
+          <!-- Zone gauche : Liste des articles -->
+          <div class="cart-container">
+            <h2>Articles sélectionnés</h2>
+            <div id="cart-items-wrapper">
+              <!-- Injecté dynamiquement par JavaScript -->
+            </div>
+          </div>
+
+          <!-- Zone droite : Formulaire et Total -->
+          <div class="checkout-sidebar" id="sidebar-wrapper">
+            <div class="summary-box">
+              <h3>Résumé de la commande</h3>
+              <div class="summary-row" style="margin-top: 15px">
+                <span>Sous-total</span>
+                <span id="subtotal-val">0,00 €</span>
+              </div>
+              <div class="summary-row">
+                <span>Frais d'activation numérique</span>
+                <span>Offerts</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total à régler</span>
+                <span id="total-val">0,00 €</span>
+              </div>
+            </div>
+
+            <div class="checkout-box">
+              <h3>Paiement sécurisé direct</h3>
+              <form id="payment-form" style="margin-top: 15px">
+                <div class="form-group">
+                  <label for="client-name">Nom complet</label>
+                  <input
+                    type="text"
+                    id="client-name"
+                    required
+                    placeholder="Ex: Marie Delattre"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="client-email">Adresse de livraison e-mail</label>
+                  <input
+                    type="email"
+                    id="client-email"
+                    required
+                    placeholder="Ex: marie@exemple.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="card-details">Coordonnées bancaires</label>
+                  <input
+                    type="text"
+                    id="card-details"
+                    required
+                    placeholder="4242 •••• •••• ••••"
+                  />
+                </div>
+                <button type="submit" class="btn-submit">
+                  Valider et régler ma commande
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Patra<br />Santé Intégrative</h3>
+          <p>
+            La naturopathie fondée sur les preuves au service de votre santé.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="boutique.html">Boutique &amp; Panier</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <a href="#">Blog</a>
+          <a href="#">FAQ</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+        <div class="footer-col newsletter">
+          <h4>Restez connectés</h4>
+          <p>Recevez des conseils et des contenus exclusifs chaque semaine.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre e-mail" required />
+            <button type="submit" aria-label="S'inscrire">➤</button>
+          </form>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  d="M14 9h3V6h-3a3 3 0 00-3 3v2H9v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 011-1z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="3" />
+                <path d="M10 9l5 3-5 3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Patra Santé Intégrative — Tous droits réservés
+      </div>
+    </footer>
+
+    <!-- SCRIPT DE GESTION DU PANIER INTER-PAGES -->
+    <script>
+      const cartWrapper = document.getElementById("cart-items-wrapper");
+      const subtotalVal = document.getElementById("subtotal-val");
+      const totalVal = document.getElementById("total-val");
+      const mainShopGrid = document.getElementById("main-shop-grid");
+      const successScreen = document.getElementById("success-screen");
+      const paymentForm = document.getElementById("payment-form");
+      const cartCountBadge = document.getElementById("cart-count");
+
+      function getCart() {
+        return JSON.parse(localStorage.getItem("naturo_cart")) || [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem("naturo_cart", JSON.stringify(cart));
+      }
+
+      function updateCartBadge(cart) {
+        const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+        cartCountBadge.textContent = totalQty;
+      }
+
+      function renderCart() {
+        const cart = getCart();
+        updateCartBadge(cart);
+        cartWrapper.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartWrapper.innerHTML = `
+            <div class="empty-cart-msg">
+              <p>Votre panier est actuellement vide.</p>
+            </div>
+          `;
+          document.getElementById("sidebar-wrapper").style.display = "none";
+          mainShopGrid.style.gridTemplateColumns = "1fr";
+          return;
+        }
+
+        // Si le panier contient des éléments, on remet le layout à double colonne
+        document.getElementById("sidebar-wrapper").style.display = "block";
+        if (window.innerWidth > 860) {
+          mainShopGrid.style.gridTemplateColumns = "1.6fr 1fr";
+        }
+
+        let currentTotal = 0;
+
+        cart.forEach((item) => {
+          currentTotal += item.price * item.quantity;
+
+          const itemRow = document.createElement("div");
+          itemRow.className = "cart-item";
+          itemRow.innerHTML = `
+            <img src="${item.img}" alt="${item.name}" class="item-img" />
+            <div class="item-details">
+              <h3>${item.name}</h3>
+              <div class="item-price">${item.price.toFixed(2)} €</div>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+              <span class="qty-val">${item.quantity}</span>
+              <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+            </div>
+            <button class="remove-btn" onclick="removeItem('${item.id}')">Supprimer</button>
+          `;
+          cartWrapper.appendChild(itemRow);
+        });
+
+        subtotalVal.textContent = `${currentTotal.toFixed(2)} €`;
+        totalVal.textContent = `${currentTotal.toFixed(2)} €`;
+      }
+
+      window.changeQty = function (id, change) {
+        let cart = getCart();
+        const item = cart.find((i) => i.id === id);
+        if (item) {
+          item.quantity += change;
+          if (item.quantity <= 0) {
+            cart = cart.filter((i) => i.id !== id);
+          }
+          saveCart(cart);
+          renderCart();
+        }
+      };
+
+      window.removeItem = function (id) {
+        let cart = getCart();
+        cart = cart.filter((i) => i.id !== id);
+        saveCart(cart);
+        renderCart();
+      };
+
+      // Soumission formulaire de paiement fictif
+      paymentForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Vider le localStorage
+        localStorage.removeItem("naturo_cart");
+        updateCartBadge([]);
+
+        // Cacher la grille et afficher le succès
+        mainShopGrid.style.display = "none";
+        successScreen.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Rendu initial au chargement de la page
+      renderCart();
+
+      // Ajustement dynamique si redimensionnement de la fenêtre
+      window.addEventListener("resize", () => {
+        const cart = getCart();
+        if (cart.length > 0 && window.innerWidth > 860) {
+          mainShopGrid.style.gridTemplateColumns = "1.6fr 1fr";
+        } else {
+          mainShopGrid.style.gridTemplateColumns = "1fr";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Protocoles — NaturoPatra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --green-sage: #a9b99a;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 1em 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- HEADER ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      .logo-link {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .logo-icon {
+        width: 40px;
+        height: 35px;
+        color: var(--green-deep);
+      }
+      .main-nav {
+        display: flex;
+        gap: 34px;
+      }
+      .main-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.4px;
+        color: var(--ink);
+        transition: color 0.2s;
+      }
+      .main-nav a:hover,
+      .main-nav a.active {
+        color: var(--green-deep);
+        font-weight: 500;
+      }
+      .header-icons {
+        display: flex;
+        gap: 16px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px;
+        position: relative;
+      }
+      .icon-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 600;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- HERO PROTOCOLES ---------- */
+      .protocols-hero {
+        text-align: center;
+        padding: 60px 0 40px;
+        background: radial-gradient(circle, #ffffff 0%, #fff7e4 100%);
+        border-bottom: 1px solid var(--line);
+      }
+      .protocols-hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+      }
+      .protocols-hero p {
+        font-size: 1.05rem;
+        max-width: 600px;
+        margin: 15px auto 0;
+      }
+      .divider {
+        display: inline-block;
+        width: 56px;
+        height: 2px;
+        background: var(--green-mid);
+      }
+      .divider.center {
+        margin: 15px auto 0;
+        display: block;
+      }
+
+      /* ---------- FILTERS ---------- */
+      .filters-section {
+        padding: 40px 0 20px;
+      }
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .filter-btn {
+        background: var(--white);
+        border: 1px solid var(--line);
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--green-deep);
+        color: var(--white);
+        border-color: var(--green-deep);
+      }
+
+      /* ---------- PROTOCOLS LIST & 3D FLIP ---------- */
+      .protocols-section {
+        padding-bottom: 80px;
+      }
+      .protocol-list {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .protocol-card {
+        background: transparent;
+        height: 320px;
+        perspective: 1200px;
+        cursor: pointer;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        transition: transform 0.7s cubic-bezier(0.15, 0.85, 0.35, 1);
+        transform-style: preserve-3d;
+      }
+
+      .protocol-card.flipped .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .protocol-card:hover .card-front,
+      .protocol-card:hover .card-back {
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* FACE AVANT */
+      .card-front {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .protocol-photo {
+        flex: 0 0 340px;
+        position: relative;
+        overflow: hidden;
+      }
+      .protocol-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .protocol-card:hover .protocol-img {
+        transform: scale(1.03);
+      }
+      .protocol-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 46px;
+        height: 46px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green-deep);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+      }
+      .protocol-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      .protocol-content {
+        flex: 1;
+        padding: 35px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .protocol-tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--gold);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .protocol-content h3 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        color: var(--ink);
+      }
+      .protocol-price {
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        color: var(--green-deep);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .protocol-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        margin-bottom: 15px;
+      }
+
+      /* Actions boutons */
+      .protocol-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: auto;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+        font-family: var(--font-body);
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: background 0.2s;
+      }
+      .btn-dark {
+        background: var(--green-deep);
+        color: var(--white);
+      }
+      .btn-dark:hover {
+        background: #2d3728;
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: var(--white);
+      }
+      .btn-gold:hover {
+        background: #a38b58;
+      }
+
+      /* FACE ARRIÈRE */
+      .card-back {
+        transform: rotateY(180deg);
+        background: var(--cream-2);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .card-back h3 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 10px;
+      }
+      .full-text {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: var(--ink);
+        margin-bottom: 20px;
+      }
+      .full-text h4 {
+        font-size: 1.05rem;
+        margin: 16px 0 6px;
+        color: var(--green-deep);
+      }
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--green-deep);
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-family: var(--font-body);
+        align-self: flex-start;
+        margin-top: auto;
+      }
+      .btn-back span {
+        margin-right: 6px;
+      }
+
+      /* Empty State */
+      .no-results {
+        display: none;
+        text-align: center;
+        padding: 60px 0;
+        font-size: 1.1rem;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- FOOTER ---------- */
+      .site-footer {
+        background: var(--green-deep);
+        color: #dfe3da;
+        padding: 64px 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .footer-brand h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        color: #c3c9bc;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 0.87rem;
+        color: #c3c9bc;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .newsletter p {
+        color: #c3c9bc;
+        font-size: 0.85rem;
+      }
+      .newsletter-form {
+        display: flex;
+        margin: 14px 0 18px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+      }
+      .newsletter-form button {
+        background: var(--gold);
+        border: none;
+        color: var(--white);
+        padding: 0 16px;
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-icons svg {
+        width: 15px;
+        height: 15px;
+        color: var(--white);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a9b09f;
+        padding: 22px 0;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 860px) {
+        .main-nav {
+          display: none;
+        }
+        .protocol-card {
+          height: 580px;
+        }
+        .card-front {
+          flex-direction: column;
+        }
+        .protocol-photo {
+          flex: none;
+          height: 220px;
+          width: 100%;
+        }
+        .protocol-content {
+          padding: 24px;
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .protocols-hero h1 {
+          font-size: 2.2rem;
+        }
+        .protocol-card {
+          height: 640px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">
+            <img
+              src="../images/logo.jpg"
+              alt="Logo NaturoPatra"
+              class="logo-icon"
+            />
+            NaturoPatra
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html" class="active">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <button aria-label="Rechercher" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <a href="boutique.html" aria-label="Panier" class="icon-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M6 6h15l-1.5 9h-12z" />
+              <path d="M6 6L4 2H2" />
+              <circle cx="9" cy="20" r="1" />
+              <circle cx="17" cy="20" r="1" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO PROTOCOLS -->
+    <section class="protocols-hero">
+      <div class="container">
+        <h1>Nos Protocoles de Santé</h1>
+        <span class="divider center"></span>
+        <p>
+          Cliquez sur un protocole pour découvrir son fonctionnement
+          scientifique détaillé ou réservez votre accompagnement.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            Tous les protocoles
+          </button>
+          <button class="filter-btn" data-filter="digestion">Digestion</button>
+          <button class="filter-btn" data-filter="hormones">
+            Équilibre Hormonal
+          </button>
+          <button class="filter-btn" data-filter="stress">
+            Stress &amp; Sommeil
+          </button>
+          <button class="filter-btn" data-filter="vitalite">
+            Énergie &amp; Vitalité
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTOCOLS LIST -->
+    <section class="protocols-section">
+      <div class="container">
+        <div class="protocol-list">
+          <!-- Protocole 1 -->
+          <div class="protocol-card" data-category="digestion">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="protocol-photo">
+                  <img
+                    src="../images/digestion.jpg"
+                    alt="Santé Digestive"
+                    class="protocol-img"
+                  />
+                  <span class="protocol-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M12 2c2 0 3 1.5 3 3s-1 2-1 3 1 1.5 1 3-1.5 3-3 3-2-1-3-1-2.5 1-4 1-3-1.5-3-3 1-2 1-3-1-2-1-3 1.5-3 3-3 2 1 3 1 2-1 4-1z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="protocol-content">
+                  <span class="protocol-tag">Santé digestive</span>
+                  <h3>Protocole Santé Digestive</h3>
+                  <div class="protocol-price">65,00 €</div>
+                  <p>
+                    Éliminez durablement les ballonnements, facilitez votre
+                    digestion et restaurez l'intégrité de votre barrière
+                    intestinale grâce à une approche micronutritionnelle.
+                  </p>
+                  <div class="protocol-actions">
+                    <button class="btn btn-dark btn-discover">
+                      Découvrir le protocole &nbsp;→
+                    </button>
+                    <button
+                      class="btn btn-gold btn-reserve"
+                      data-id="proto-digest"
+                      data-name="Protocole Santé Digestive"
+                      data-price="65"
+                      data-img="../images/digestion.jpg"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Approche Scientifique Digestive</h3>
+                <div class="full-text">
+                  <p>
+                    Ce programme de 4 semaines cible la restauration complète de
+                    l'écosystème intestinal.
+                  </p>
+                  <h4>Les phases du programme :</h4>
+                  <p>
+                    • <strong>Phase 1 :</strong> Élimination des agents
+                    pathogènes et assainissement du terrain.
+                  </p>
+                  <p>
+                    • <strong>Phase 2 :</strong> Réparation de la muqueuse
+                    intestinale (via la L-Glutamine et des extraits de réglisse
+                    déglycyrrhizinée).
+                  </p>
+                  <p>
+                    • <strong>Phase 3 :</strong> Réintroduction progressive et
+                    ciblée de souches probiotiques adaptées.
+                  </p>
+                </div>
+                <button class="btn-back">
+                  <span>&larr;</span> Retour à l'aperçu
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Protocole 2 -->
+          <div class="protocol-card" data-category="hormones">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="protocol-photo">
+                  <img
+                    src="../images/hormone.jpg"
+                    alt="Équilibre Hormonal"
+                    class="protocol-img"
+                  />
+                  <span class="protocol-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <circle cx="12" cy="12" r="3" />
+                      <path
+                        d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="protocol-content">
+                  <span class="protocol-tag">Régulation hormonale</span>
+                  <h3>Protocole Équilibre Hormonal</h3>
+                  <div class="protocol-price">75,00 €</div>
+                  <p>
+                    Optimisez et régulez votre balance hormonale féminine à
+                    chaque phase de la vie. Un protocole doux pour soulager les
+                    syndromes prémenstruels.
+                  </p>
+                  <div class="protocol-actions">
+                    <button class="btn btn-dark btn-discover">
+                      Découvrir le protocole &nbsp;→
+                    </button>
+                    <button
+                      class="btn btn-gold btn-reserve"
+                      data-id="proto-hormone"
+                      data-name="Protocole Équilibre Hormonal"
+                      data-price="75"
+                      data-img="../images/hormone.jpg"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Régulation de l'Axe Hypophyso-Ovarien</h3>
+                <div class="full-text">
+                  <p>
+                    Un accompagnement structuré sur 3 cycles pour stabiliser les
+                    fluctuations hormonales naturelles.
+                  </p>
+                  <h4>Vos leviers d'action :</h4>
+                  <p>
+                    • <strong>Détoxication hépatique :</strong> Soutien du foie
+                    pour une élimination optimale des œstrogènes excédentaires.
+                  </p>
+                  <p>
+                    • <strong>Plantes régulatrices :</strong> Utilisation du
+                    Gattilier et de l'Alchémille pour rééquilibrer le rapport
+                    œstrogènes/progestérone.
+                  </p>
+                  <p>
+                    • <strong>Nutrition :</strong> Intégration d'acides gras
+                    essentiels pour nourrir le système endocrinien.
+                  </p>
+                </div>
+                <button class="btn-back">
+                  <span>&larr;</span> Retour à l'aperçu
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Protocole 3 -->
+          <div class="protocol-card" data-category="stress">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="protocol-photo">
+                  <img
+                    src="../images/stress-protocole.jpg"
+                    alt="Gestion du stress"
+                    class="protocol-img"
+                  />
+                  <span class="protocol-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M9 3a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 003 3M15 3a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-3 3M9 3v16M15 3v16"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="protocol-content">
+                  <span class="protocol-tag">Stress &amp; Mental</span>
+                  <h3>Protocole Gestion du Stress</h3>
+                  <div class="protocol-price">55,00 €</div>
+                  <p>
+                    Régulez la sécrétion de cortisol et d'adrénaline. Apprenez à
+                    apaiser votre système nerveux central grâce à des techniques
+                    respiratoires et à la phytothérapie.
+                  </p>
+                  <div class="protocol-actions">
+                    <button class="btn btn-dark btn-discover">
+                      Découvrir le protocole &nbsp;→
+                    </button>
+                    <button
+                      class="btn btn-gold btn-reserve"
+                      data-id="proto-stress"
+                      data-name="Protocole Gestion du Stress"
+                      data-price="55"
+                      data-img="../images/stress-protocole.jpg"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Modulation du Cortisol</h3>
+                <div class="full-text">
+                  <p>
+                    Un plan d'action intensif conçu pour contrer l'épuisement
+                    nerveux et la charge mentale excessive.
+                  </p>
+                  <h4>Outils inclus :</h4>
+                  <p>
+                    • <strong>Micronutrition :</strong> Apport de magnésium
+                    hautement bioassimilable et de vitamines du groupe B.
+                  </p>
+                  <p>
+                    • <strong>Adaptogènes :</strong> Utilisation de la Rhodiola
+                    pour augmenter la tolérance cellulaire au stress quotidien.
+                  </p>
+                  <p>
+                    • <strong>Relaxation :</strong> Exercices pratiques
+                    d'activation du système parasympathique.
+                  </p>
+                </div>
+                <button class="btn-back">
+                  <span>&larr;</span> Retour à l'aperçu
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Protocole 4 -->
+          <div class="protocol-card" data-category="vitalite">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="protocol-photo">
+                  <img
+                    src="../images/energie.jpg"
+                    alt="Énergie et force"
+                    class="protocol-img"
+                  />
+                  <span class="protocol-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="protocol-content">
+                  <span class="protocol-tag">Vitalité &amp; Immunité</span>
+                  <h3>Protocole Énergie &amp; Vitalité</h3>
+                  <div class="protocol-price">59,00 €</div>
+                  <p>
+                    Identifiez les carences micronutritionnelles responsables de
+                    votre épuisement. Un programme complet pour restructurer
+                    votre niveau d'énergie physique.
+                  </p>
+                  <div class="protocol-actions">
+                    <button class="btn btn-dark btn-discover">
+                      Découvrir le protocole &nbsp;→
+                    </button>
+                    <button
+                      class="btn btn-gold btn-reserve"
+                      data-id="proto-vitalite"
+                      data-name="Protocole Énergie &amp; Vitalité"
+                      data-price="59"
+                      data-img="../images/energie.jpg"
+                    >
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <h3>Optimisation Mitochondriale</h3>
+                <div class="full-text">
+                  <p>
+                    Relancez votre métabolisme d'énergie cellulaire directement
+                    à la source.
+                  </p>
+                  <h4>Axes du protocole :</h4>
+                  <p>
+                    • <strong>Bilan des essentiels :</strong> Analyse des
+                    statuts en fer, zinc, coenzyme Q10 et vitamine D.
+                  </p>
+                  <p>
+                    • <strong>Alimentation dense :</strong> Intégration de
+                    super-aliments et ajustement de la chrononutrition.
+                  </p>
+                  <p>
+                    • <strong>Oxygénation :</strong> Techniques pour améliorer
+                    la respiration cellulaire et optimiser le sommeil profond.
+                  </p>
+                </div>
+                <button class="btn-back">
+                  <span>&larr;</span> Retour à l'aperçu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Results Msg -->
+        <div class="no-results" id="no-results">
+          Aucun protocole ne correspond à cette catégorie pour le moment.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Patra<br />Santé Intégrative</h3>
+          <p>
+            La naturopathie fondée sur les preuves au service de votre santé.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="boutique.html">Boutique &amp; Panier</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <a href="#">Blog</a>
+          <a href="#">FAQ</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+        <div class="footer-col newsletter">
+          <h4>Restez connectés</h4>
+          <p>Recevez des conseils et des contenus exclusifs chaque semaine.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre e-mail" required />
+            <button type="submit" aria-label="S'inscrire">➤</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Patra Santé Intégrative — Tous droits réservés
+      </div>
+    </footer>
+
+    <script>
+      // FILTRES
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const protocolCards = document.querySelectorAll(".protocol-card");
+      const noResultsMsg = document.getElementById("no-results");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filterValue = button.getAttribute("data-filter");
+          let visibleCount = 0;
+
+          protocolCards.forEach((card) => {
+            const cardCategory = card.getAttribute("data-category");
+            card.classList.remove("flipped");
+
+            if (filterValue === "all" || cardCategory === filterValue) {
+              card.style.display = "block";
+              visibleCount++;
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
+        });
+      });
+
+      // FLIP CARDS
+      protocolCards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          if (
+            e.target.closest(".protocol-actions") ||
+            e.target.closest(".full-text") ||
+            e.target.closest(".btn-back")
+          )
+            return;
+          card.classList.toggle("flipped");
+        });
+      });
+
+      document.querySelectorAll(".btn-discover").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          btn.closest(".protocol-card").classList.add("flipped");
+        });
+      });
+
+      document.querySelectorAll(".btn-back").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          btn.closest(".protocol-card").classList.remove("flipped");
+        });
+      });
+
+      // GESTION DU PANIER & REDIRECTION
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("naturo_cart")) || [];
+        const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+        document.getElementById("cart-count").textContent = count;
+      }
+
+      document.querySelectorAll(".btn-reserve").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const id = btn.getAttribute("data-id");
+          const name = btn.getAttribute("data-name");
+          const price = parseFloat(btn.getAttribute("data-price"));
+          const img = btn.getAttribute("data-img");
+
+          let cart = JSON.parse(localStorage.getItem("naturo_cart")) || [];
+          const existing = cart.find((item) => item.id === id);
+
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ id, name, price, img, quantity: 1 });
+          }
+
+          localStorage.setItem("naturo_cart", JSON.stringify(cart));
+          updateCartBadge();
+
+          // Redirection vers la boutique
+          window.location.href = "boutique.html";
+        });
+      });
+
+      // Init badge au chargement
+      updateCartBadge();
+    </script>
+  </body>
+</html>

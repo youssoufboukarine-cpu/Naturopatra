@@ -333,6 +333,43 @@
         border-radius: 4px;
       }
 
+      /* ---------- ABOUT ---------- */
+      .about {
+        background: var(--cream-2);
+        padding: 80px 0;
+      }
+      .about-inner {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about-photo {
+        border-radius: 6px;
+        height: 460px;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+      }
+      .eyebrow {
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        color: var(--green-mid);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .eyebrow.center {
+        text-align: center;
+      }
+      .about-text h2 {
+        font-size: 2.1rem;
+        margin-bottom: 2px;
+      }
+      .about-text p {
+        margin-top: 18px;
+      }
+
       /* ---------- PROTOCOLS ---------- */
       .protocols {
         padding: 40px 0;
@@ -416,11 +453,53 @@
         margin-top: 44px;
       }
 
-      /* ---------- ZONE BOUTIQUE PRODUITS ---------- */
+      /* ---------- AJOUT ET ZONE GESTION PRODUITS (SUPABASE) ---------- */
       .products-section {
         padding: 60px 0;
         background: var(--white);
         border-top: 1px solid var(--line);
+      }
+      .admin-box {
+        background: var(--cream-2);
+        border: 1px dashed var(--gold);
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+      .admin-box h2 {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        color: var(--green-deep);
+      }
+      .admin-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) auto;
+        gap: 16px;
+        align-items: end;
+      }
+      .admin-form input {
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        background: var(--white);
+        outline: none;
+      }
+      .admin-form button {
+        background: var(--green-deep);
+        color: var(--white);
+        border: none;
+        padding: 11px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      .admin-form button:hover {
+        background: #2d3728;
       }
       .product-grid {
         display: grid;
@@ -459,39 +538,35 @@
         color: var(--green-deep);
         margin-bottom: 14px;
       }
-
-      /* ---------- ABOUT ---------- */
-      .about {
-        background: var(--cream-2);
-        padding: 80px 0;
+      .admin-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
       }
-      .about-inner {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 64px;
-        align-items: center;
+      .btn-admin-del {
+        background: #c94c4c;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-family: var(--font-body);
       }
-      .about-photo {
-        border-radius: 6px;
-        height: 460px;
-        width: 100%;
-        object-fit: cover;
-        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+      .btn-admin-edit {
+        background: var(--gold);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-family: var(--font-body);
       }
-      .eyebrow {
-        display: block;
-        font-size: 0.78rem;
-        letter-spacing: 2px;
-        color: var(--green-mid);
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-      .about-text h2 {
-        font-size: 2.1rem;
-        margin-bottom: 2px;
-      }
-      .about-text p {
-        margin-top: 18px;
+      .hidden {
+        display: none !important;
       }
 
       /* ---------- FEATURES ---------- */
@@ -655,6 +730,9 @@
         .product-grid {
           grid-template-columns: 1fr;
         }
+        .admin-form {
+          grid-template-columns: 1fr;
+        }
         .features-grid {
           grid-template-columns: 1fr;
         }
@@ -700,6 +778,24 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
+
+          <!-- ICÔNE DE CONNEXION SOUHAITÉE -->
+          <a
+            href="pages/login.html"
+            aria-label="Connexion"
+            class="icon-btn"
+            id="header-auth-btn"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
 
           <a href="pages/boutique.html" aria-label="Panier" class="icon-btn">
             <svg
@@ -759,9 +855,22 @@
         border-radius: 2px;
       }
 
+      .naturopatra-subtitle {
+        font-size: 1rem;
+        color: #616b62;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-top: 15px;
+        font-weight: 400;
+      }
+
       @media (max-width: 600px) {
         .naturopatra-title {
           font-size: 2.8rem;
+        }
+        .naturopatra-subtitle {
+          font-size: 0.85rem;
+          letter-spacing: 2px;
         }
       }
       .banner {
@@ -926,9 +1035,51 @@
       </div>
     </section>
 
-    <!-- SECTION BOUTIQUE PRODUITS -->
+    <!-- SECTION DYNAMIQUE PRODUITS (SUPABASE) -->
     <section class="products-section">
       <div class="container">
+        <!-- Zone Administrateur -->
+        <div id="admin-panel" class="admin-box hidden">
+          <h2>🛠️ Espace de Gestion (Admin)</h2>
+          <form id="form-produit" class="admin-form">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Nom du produit :</label
+              >
+              <input
+                type="text"
+                id="p-nom"
+                placeholder="Ex: Huile Essentielle"
+                required
+              />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Description :</label
+              >
+              <input
+                type="text"
+                id="p-desc"
+                placeholder="Ex: Bio et relaxante..."
+              />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500"
+                >Prix (€) :</label
+              >
+              <input
+                type="number"
+                id="p-prix"
+                placeholder="Ex: 14.90"
+                step="0.01"
+                required
+              />
+            </div>
+            <button type="submit">Ajouter le produit</button>
+          </form>
+        </div>
+
+        <!-- Zone d'affichage publique -->
         <div class="section-heading">
           <h2>Ma Boutique Bien-être</h2>
           <span class="divider small center"></span>
@@ -956,7 +1107,7 @@
           <span class="divider small"></span>
           <p>Je suis diplômée en naturopathie et santé intégrative.</p>
           <p>
-            Ma mission is d'accompagner chaque personne vers un équilibre
+            Ma mission est d'accompagner chaque personne vers un équilibre
             durable, en identifiant les causes profondes des déséquilibres et en
             proposant des solutions personnalisées, fondées sur la science et
             adaptées à votre mode de vie.
@@ -1230,108 +1381,5 @@
         © 2026 Patra Santé Intégrative — Tous droits réservés
       </div>
     </footer>
-
-    <!-- SDK SUPABASE -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-    <script>
-      const SUPABASE_URL = "https://ymevvaeyxoxwomfdihib.supabase.co";
-      const SUPABASE_ANON_KEY =
-        "sb_publishable_J8secXf4UfTMS6WqnLLtkg_RVQwhYjf";
-
-      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      const productGrid = document.getElementById("liste-produits");
-
-      async function chargerProduitsBoutique() {
-        const { data: products, error } = await supabase
-          .from("products")
-          .select("*")
-          .order("created_at", { ascending: false });
-
-        if (error) return;
-        productGrid.innerHTML = "";
-
-        if (products.length === 0) {
-          productGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--ink-soft); padding: 20px;">Aucun produit n'est disponible.</p>`;
-          return;
-        }
-
-        products.forEach((product) => {
-          const card = document.createElement("div");
-          card.className = "product-card";
-
-          card.innerHTML = `
-            <div>
-              <h3>${product.nom}</h3>
-              <p>${product.description || "Aucune description."}</p>
-            </div>
-            <div>
-              <div class="product-price">${parseFloat(product.prix).toFixed(2)} €</div>
-              <button class="btn btn-dark small" style="width: 100%; justify-content: center;" onclick="ajouterAuPanierBoutique(${product.id}, '${product.nom.replace(/'/g, "\\'")}', ${product.prix})">Ajouter au panier</button>
-            </div>
-          `;
-          productGrid.appendChild(card);
-        });
-      }
-
-      window.ajouterAuPanierBoutique = function (id, name, price) {
-        let cart = JSON.parse(localStorage.getItem("naturo_cart")) || [];
-        const itemExistant = cart.find((item) => item.id === id);
-        if (itemExistant) itemExistant.quantity += 1;
-        else cart.push({ id, name, price, quantity: 1 });
-        localStorage.setItem("naturo_cart", JSON.stringify(cart));
-        updateCartBadge();
-        alert(`"${name}" ajouté au panier.`);
-      };
-
-      window.addEventListener("DOMContentLoaded", () => {
-        chargerProduitsBoutique();
-      });
-
-      // CAROUSEL LOGIC
-      const track = document.querySelector(".carousel-track");
-      const cards = document.querySelectorAll(".carousel-card");
-      const prevBtn = document.querySelector(".carousel-arrow.prev");
-      const nextBtn = document.querySelector(".carousel-arrow.next");
-      const dots = document.querySelectorAll(".dot");
-      let currentIndex = 0;
-
-      function getVisibleCardsCount() {
-        if (window.innerWidth <= 560) return 1;
-        if (window.innerWidth <= 960) return 2;
-        return 3;
-      }
-
-      function updateCarousel() {
-        if (!cards.length) return;
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        const gap = 22;
-        const maxIndex = cards.length - getVisibleCardsCount();
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-        dots.forEach((dot, idx) =>
-          dot.classList.toggle("active", idx === currentIndex),
-        );
-      }
-
-      nextBtn.addEventListener("click", () => {
-        currentIndex++;
-        updateCarousel();
-      });
-      prevBtn.addEventListener("click", () => {
-        currentIndex--;
-        updateCarousel();
-      });
-      window.addEventListener("resize", updateCarousel);
-
-      function updateCartBadge() {
-        const cart = JSON.parse(localStorage.getItem("naturo_cart")) || [];
-        document.getElementById("cart-count").textContent = cart.reduce(
-          (acc, item) => acc + item.quantity,
-          0,
-        );
-      }
-      updateCartBadge();
-    </script>
   </body>
 </html>

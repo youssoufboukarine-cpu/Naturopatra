@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foire Aux Questions - NaturoPatra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --green-sage: #a9b99a;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.6;
+      }
+      h1, h2, h3 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 1em 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 800px; /* Plus étroit pour une lecture confortable de la FAQ */
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- HEADER ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        max-width: 1180px;
+      }
+      .logo-link {
+        display: inline-block;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .logo-icon {
+        width: 40px;
+        height: 35px;
+        color: var(--green-deep);
+      }
+      .main-nav {
+        display: flex;
+        gap: 34px;
+      }
+      .main-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.4px;
+        color: var(--ink);
+        transition: color 0.2s;
+      }
+      .main-nav a:hover {
+        color: var(--green-deep);
+      }
+      .header-icons {
+        display: flex;
+        gap: 16px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .icon-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 600;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- HERO FAQ ---------- */
+      .faq-hero {
+        text-align: center;
+        padding: 60px 0 40px;
+        background: radial-gradient(circle, #ffffff 0%, #fff7e4 100%);
+        border-bottom: 1px solid var(--line);
+      }
+      .faq-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+      .divider {
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #c5a880;
+        margin: 15px auto;
+        border-radius: 2px;
+      }
+
+      /* ---------- ACCORDÉONS FAQ ---------- */
+      .faq-section {
+        padding: 60px 0 80px;
+      }
+      
+      .faq-group {
+        margin-bottom: 40px;
+      }
+      
+      .faq-group h2 {
+        font-size: 1.5rem;
+        color: var(--green-deep);
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 8px;
+      }
+
+      details {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        margin-bottom: 14px;
+        overflow: hidden;
+        transition: border-color 0.2s;
+      }
+      
+      details[open] {
+        border-color: var(--gold);
+      }
+
+      summary {
+        padding: 18px 24px;
+        font-weight: 500;
+        font-size: 1.05rem;
+        cursor: pointer;
+        list-style: none; /* Cache la flèche par défaut sous Chrome/Firefox */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+      
+      summary::-webkit-details-marker {
+        display: none; /* Cache la flèche sous Safari */
+      }
+
+      /* Flèche personnalisée */
+      summary::after {
+        content: "＋";
+        font-size: 1.1rem;
+        color: var(--green-mid);
+        transition: transform 0.2s ease;
+      }
+
+      details[open] summary::after {
+        content: "✕";
+        color: var(--gold);
+      }
+
+      .faq-answer {
+        padding: 0 24px 20px 24px;
+        font-size: 0.95rem;
+        color: var(--ink-soft);
+      }
+      
+      .faq-answer p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ---------- CONTACT BOX ---------- */
+      .faq-contact {
+        background: var(--cream-2);
+        border: 1px dashed var(--gold);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .faq-contact h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      .faq-contact a {
+        color: var(--green-deep);
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      /* ---------- FOOTER ---------- */
+      .site-footer {
+        background: var(--green-deep);
+        color: #dfe3da;
+        padding: 64px 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .footer-brand h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        color: #c3c9bc;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 0.87rem;
+        color: #c3c9bc;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .newsletter p {
+        color: #c3c9bc;
+        font-size: 0.85rem;
+      }
+      .newsletter-form {
+        display: flex;
+        margin: 14px 0 18px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+      }
+      .newsletter-form button {
+        background: var(--gold);
+        border: none;
+        color: var(--white);
+        padding: 0 16px;
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-icons svg {
+        width: 15px;
+        height: 15px;
+        color: var(--white);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a9b09f;
+        padding: 22px 0;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 960px) {
+        .main-nav { display: none; }
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .faq-hero h1 { font-size: 2.2rem; }
+        .footer-grid { grid-template-columns: 1fr; }
+        summary { padding: 14px 18px; font-size: 0.95rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">
+            <img src="../images/logo.jpg" alt="Logo NaturoPatra" class="logo-icon" />
+            NaturoPatra
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <button aria-label="Rechercher" class="icon-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <a href="boutique.html" aria-label="Panier" class="icon-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 6h15l-1.5 9h-12z" /><path d="M6 6L4 2H2" /><circle cx="9" cy="20" r="1" /><circle cx="17" cy="20" r="1" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="faq-hero">
+      <div class="container">
+        <h1>Questions Fréquentes</h1>
+        <span class="divider"></span>
+        <p>Toutes les réponses à vos questions sur les protocoles numériques et l'approche de la naturopathie intégrative.</p>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDIONS -->
+    <main class="container faq-section">
+      
+      <!-- Groupe 1 : Commandes & Téléchargements -->
+      <div class="faq-group">
+        <h2>Commandes &amp; Téléchargements</h2>
+        
+        <details>
+          <summary>Faut-il créer un compte pour acheter un protocole ?</summary>
+          <div class="faq-answer">
+            <p>Non, aucun compte ni mot de passe n'est requis. Vous validez votre panier en tant qu'invité. Il vous suffit de renseigner votre adresse e-mail au moment du paiement pour recevoir vos documents.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Comment et quand vais-je recevoir mon protocole ?</summary>
+          <div class="faq-answer">
+            <p>Dès que votre paiement en ligne est validé, un e-mail de confirmation vous est envoyé automatiquement. Cet e-mail contient les liens d'accès ou de téléchargement immédiat pour vos protocoles au format PDF.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Le paiement en ligne est-il sécurisé ?</summary>
+          <div class="faq-answer">
+            <p>Tout à fait. Les transactions sont entièrement chiffrées et traitées par notre prestataire de paiement sécurisé (Stripe/PayPal). Aucune coordonnée bancaire ne passe ni n'est stockée sur notre site.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Groupe 2 : Approche & Pratique -->
+      <div class="faq-group">
+        <h2>L'approche NaturoPatra</h2>
+        
+        <details>
+          <summary>Qu'est-ce que la naturopathie fondée sur les preuves ?</summary>
+          <div class="faq-answer">
+            <p>C'est une pratique qui sélectionne des outils naturels (nutrition, micronutrition, hygiène de vie, gestion du stress) dont l'efficacité et la sécurité sont documentées et validées par les études scientifiques récentes, en évitant les approches ésotériques.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Un protocole remplace-t-il une consultation médicale ?</summary>
+          <div class="faq-answer">
+            <p>En aucun cas. Les protocoles proposent des conseils d'hygiène de vie et de prévention générale. Ils ne constituent pas un diagnostic médical et ne remplacent jamais le traitement ou l'avis de votre médecin généraliste ou spécialiste.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Puis-je demander un remboursement ?</summary>
+          <div class="faq-answer">
+            <p>Conformément à la réglementation sur les contenus numériques téléchargeables, les protocoles envoyés instantanément par e-mail ne peuvent pas faire l'objet d'un droit de rétractation après livraison. Si vous rencontrez un problème technique avec votre fichier, contactez-nous directement.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- CONTACT BOX -->
+      <div class="faq-contact">
+        <h3>Vous avez une autre question ?</h3>
+        <p>Si vous n'avez pas trouvé votre réponse, vous pouvez m'écrire directement via la page <a href="contact.html">Contact</a>.</p>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Patra<br />Santé Intégrative</h3>
+          <p>La naturopathie fondée sur les preuves au service de votre santé.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <a href="articles.html">Blog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+        <div class="footer-col newsletter">
+          <h4>Restez connectés</h4>
+          <p>Recevez des conseils et des contenus exclusifs chaque semaine.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre e-mail" required />
+            <button type="submit" aria-label="S'inscrire">➤</button>
+          </form>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M14 9h3V6h-3a3 3 0 00-3 3v2H9v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 011-1z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="2" y="5" width="20" height="14" rx="3" /><path d="M10 9l5 3-5 3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Patra Santé Intégrative — Tous droits réservés
+      </div>
+    </footer>
+
+    <script>
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('naturo_cart')) || [];
+        document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+      }
+      updateCartBadge();
+    </script>
+  </body>
+</html>

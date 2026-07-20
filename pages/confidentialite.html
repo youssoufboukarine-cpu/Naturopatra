@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politique de Confidentialité - NaturoPatra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --green-sage: #a9b99a;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.6;
+      }
+      h1, h2, h3 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 1em 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- HEADER ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        max-width: 1180px;
+      }
+      .logo-link {
+        display: inline-block;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .logo-icon {
+        width: 40px;
+        height: 35px;
+        color: var(--green-deep);
+      }
+      .main-nav {
+        display: flex;
+        gap: 34px;
+      }
+      .main-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.4px;
+        color: var(--ink);
+        transition: color 0.2s;
+      }
+      .main-nav a:hover {
+        color: var(--green-deep);
+      }
+      .header-icons {
+        display: flex;
+        gap: 16px;
+      }
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--ink);
+        padding: 4px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .icon-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 600;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- HERO ---------- */
+      .privacy-hero {
+        text-align: center;
+        padding: 60px 0 40px;
+        background: radial-gradient(circle, #ffffff 0%, #fff7e4 100%);
+        border-bottom: 1px solid var(--line);
+      }
+      .privacy-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+      .divider {
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #c5a880;
+        margin: 15px auto;
+        border-radius: 2px;
+      }
+
+      /* ---------- CONTENU ---------- */
+      .privacy-content {
+        padding: 60px 0 80px;
+      }
+      .privacy-section {
+        margin-bottom: 40px;
+      }
+      .privacy-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+        color: var(--green-deep);
+      }
+      .privacy-section p, .privacy-section ul {
+        font-size: 0.95rem;
+        color: var(--ink-soft);
+        margin-bottom: 12px;
+      }
+      .privacy-section ul {
+        padding-left: 20px;
+      }
+      .privacy-section li {
+        margin-bottom: 6px;
+      }
+      .highlight-box {
+        background: var(--white);
+        border: 1px solid var(--line);
+        padding: 20px;
+        border-radius: 6px;
+        margin: 20px 0;
+      }
+
+      /* ---------- FOOTER ---------- */
+      .site-footer {
+        background: var(--green-deep);
+        color: #dfe3da;
+        padding: 64px 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .footer-brand h3 {
+        color: var(--white);
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        color: #c3c9bc;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 0.87rem;
+        color: #c3c9bc;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .newsletter p {
+        color: #c3c9bc;
+        font-size: 0.85rem;
+      }
+      .newsletter-form {
+        display: flex;
+        margin: 14px 0 18px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 10px 12px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+      }
+      .newsletter-form button {
+        background: var(--gold);
+        border: none;
+        color: var(--white);
+        padding: 0 16px;
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .social-icons svg {
+        width: 15px;
+        height: 15px;
+        color: var(--white);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #a9b09f;
+        padding: 22px 0;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 960px) {
+        .main-nav { display: none; }
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .privacy-hero h1 { font-size: 2.2rem; }
+        .footer-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">
+            <img src="../images/logo.jpg" alt="Logo NaturoPatra" class="logo-icon" />
+            NaturoPatra
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <button aria-label="Rechercher" class="icon-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <a href="boutique.html" aria-label="Panier" class="icon-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 6h15l-1.5 9h-12z" /><path d="M6 6L4 2H2" /><circle cx="9" cy="20" r="1" /><circle cx="17" cy="20" r="1" />
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="privacy-hero">
+      <div class="container">
+        <h1>Politique de Confidentialité</h1>
+        <span class="divider"></span>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container privacy-content">
+      
+      <div class="privacy-section">
+        <h2>1. Introduction</h2>
+        <p>Soucieux de la protection de votre vie privée et du respect du RGPD, <strong>NaturoPatra</strong> s'engage à collecter et traiter vos données personnelles de manière transparente, confidentielle et sécurisée.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>2. Données collectées et finalités</h2>
+        <p>Le site est volontairement conçu de manière minimaliste pour limiter la collecte de données. Nous ne vous demandons pas de créer de compte utilisateur. Les seules données collectées sont :</p>
+        <ul>
+          <li><strong>Lors d'un achat en invité :</strong> Votre adresse e-mail, nom et prénom. Ces informations sont exclusivement utilisées pour générer la transaction et vous envoyer automatiquement vos liens de téléchargement de protocoles.</li>
+          <li><strong>Via le formulaire de contact :</strong> Votre nom, adresse e-mail et le contenu de votre message, afin de pouvoir répondre à vos demandes.</li>
+          <li><strong>Via le formulaire de newsletter :</strong> Votre adresse e-mail uniquement, afin de vous adresser nos conseils en santé naturelle (vous pouvez vous désabonner à tout moment via un lien intégré en bas de chaque e-mail).</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>3. Utilisation du stockage local (Cookies &amp; LocalStorage)</h2>
+        <div class="highlight-box">
+          <p><strong>Zéro cookie publicitaire ou de traçage tiers :</strong> Nous n'utilisons aucun traceur intrusif.</p>
+          <p>Le site s'appuie uniquement sur le <strong>LocalStorage</strong> de votre propre navigateur pour mémoriser temporairement les éléments de votre panier d'achat. Ce mécanisme est purement fonctionnel et indispensable pour vous permettre de composer votre commande d'une page à l'autre.</p>
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2>4. Sous-traitants et partage des données</h2>
+        <p>Vos informations personnelles ne sont jamais vendues, louées ou cédées à des tiers. Elles transitent uniquement par nos prestataires techniques de confiance pour assurer le service :</p>
+        <ul>
+          <li><strong>Supabase Inc. :</strong> Pour la gestion sécurisée et technique des données de formulaires d'envoi.</li>
+          <li><strong>Stripe / PayPal :</strong> Pour le traitement de vos paiements chiffrés. Leurs propres politiques de confidentialité s'appliquent lors de la saisie de vos coordonnées bancaires, auxquelles nous n'avons jamais accès.</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>5. Durée de conservation</h2>
+        <p>Les données liées aux commandes et facturations sont conservées conformément aux obligations légales de comptabilité. Les données relatives à la newsletter sont conservées tant que vous ne manifestez pas votre choix de vous désinscrire.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>6. Vos droits</h2>
+        <p>Conformément à la réglementation européenne, vous disposez d'un droit d'accès, de rectification, de limitation et de suppression de vos données personnelles. Vous pouvez exercer ces droits à tout moment en écrivant simplement à l'adresse e-mail suivante : <strong>[Votre Adresse E-mail]</strong>.</p>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Patra<br />Santé Intégrative</h3>
+          <p>La naturopathie fondée sur les preuves au service de votre santé.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="../index.html">Accueil</a>
+          <a href="articles.html">Articles</a>
+          <a href="protocoles.html">Protocoles</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <a href="articles.html">Blog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+        <div class="footer-col newsletter">
+          <h4>Restez connectés</h4>
+          <p>Recevez des conseils et des contenus exclusifs chaque semaine.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre e-mail" required />
+            <button type="submit" aria-label="S'inscrire">➤</button>
+          </form>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M14 9h3V6h-3a3 3 0 00-3 3v2H9v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 011-1z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="2" y="5" width="20" height="14" rx="3" /><path d="M10 9l5 3-5 3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Patra Santé Intégrative — Tous droits réservés
+      </div>
+    </footer>
+
+    <script>
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('naturo_cart')) || [];
+        document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+      }
+      updateCartBadge();
+    </script>
+  </body>
+</html>

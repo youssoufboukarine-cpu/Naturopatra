@@ -1,419 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion / Inscription - NaturoPatra</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Jost:wght=300;400;500;600&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --cream: #faf8f3;
-        --cream-2: #f3efe7;
-        --ink: #2b2a26;
-        --ink-soft: #5a5850;
-        --green-deep: #3c4a34;
-        --gold: #b8a06a;
-        --line: #dcd6c8;
-        --white: #ffffff;
-        --font-display: "Playfair Display", Georgia, serif;
-        --font-body: "Jost", "Segoe UI", sans-serif;
-      }
+        :root {
+            --cream: #faf8f3;
+            --cream-2: #f3efe7;
+            --ink: #2b2a26;
+            --ink-soft: #5a5850;
+            --green-deep: #3c4a34;
+            --gold: #b8a06a;
+            --line: #dcd6c8;
+            --white: #ffffff;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Jost', 'Segoe UI', sans-serif;
+        }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: var(--font-body);
-        background: var(--cream);
-        color: var(--ink);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 20px;
-      }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-      .login-container {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 40px;
-        width: 100%;
-        max-width: 420px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-        text-align: center;
-      }
+        .login-container {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+        }
 
-      h1 {
-        font-family: var(--font-display);
-        font-size: 2rem;
-        margin-bottom: 8px;
-        color: var(--green-deep);
-      }
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--green-deep);
+        }
 
-      .subtitle {
-        color: var(--ink-soft);
-        font-size: 0.95rem;
-        margin-bottom: 24px;
-      }
+        .subtitle {
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
 
-      .form-group {
-        text-align: left;
-        margin-bottom: 18px;
-      }
+        .form-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
 
-      label {
-        display: block;
-        font-size: 0.85rem;
-        font-weight: 500;
-        margin-bottom: 6px;
-        color: var(--ink);
-      }
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
 
-      input {
-        width: 100%;
-        padding: 12px 14px;
-        border: 1px solid var(--line);
-        border-radius: 4px;
-        font-family: var(--font-body);
-        font-size: 0.95rem;
-        background: var(--cream);
-        outline: none;
-        transition: border 0.2s;
-      }
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            background: var(--cream);
+            outline: none;
+            transition: border 0.2s;
+        }
 
-      input:focus {
-        border-color: var(--green-deep);
-      }
+        input:focus {
+            border-color: var(--green-deep);
+        }
 
-      .btn {
-        display: block;
-        width: 100%;
-        padding: 12px;
-        background: var(--green-deep);
-        color: var(--white);
-        border: none;
-        border-radius: 4px;
-        font-family: var(--font-body);
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.2s;
-        margin-top: 10px;
-      }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--green-deep);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
 
-      .btn:hover {
-        background: #2d3728;
-      }
+        .btn:hover {
+            background: #2d3728;
+        }
 
-      .btn-outline {
-        display: inline-flex;
-        justify-content: center;
-        text-decoration: none;
-        width: 100%;
-        padding: 12px;
-        background: transparent;
-        border: 1px solid var(--line);
-        color: var(--ink-soft);
-        border-radius: 4px;
-        font-family: var(--font-body);
-        font-size: 1rem;
-        margin-top: 14px;
-        transition:
-          background 0.2s,
-          color 0.2s;
-      }
+        .btn-outline {
+            display: inline-flex;
+            justify-content: center;
+            text-decoration: none;
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--ink-soft);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            margin-top: 14px;
+            transition: background 0.2s, color 0.2s;
+        }
 
-      .btn-outline:hover {
-        background: var(--cream-2);
-        color: var(--ink);
-      }
+        .btn-outline:hover {
+            background: var(--cream-2);
+            color: var(--ink);
+        }
 
-      .toggle-link {
-        display: block;
-        margin-top: 16px;
-        font-size: 0.9rem;
-        color: var(--gold);
-        text-decoration: none;
-        cursor: pointer;
-      }
+        .toggle-link {
+            display: block;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-      .toggle-link:hover {
-        text-decoration: underline;
-      }
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
 
-      .message-zone {
-        font-size: 0.85rem;
-        margin-top: 12px;
-        display: none;
-        padding: 10px;
-        border-radius: 4px;
-      }
-      .error {
-        color: #c94c4c;
-      }
-      .success {
-        color: #3c4a34;
-        background: var(--cream-2);
-      }
+        .message-zone {
+            font-size: 0.85rem;
+            margin-top: 12px;
+            display: none;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .error { color: #c94c4c; }
+        .success { color: #3c4a34; background: var(--cream-2); }
 
-      .success-box {
-        display: none;
-      }
+        .success-box {
+            display: none;
+        }
 
-      .success-box p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        color: var(--ink-soft);
-      }
+        .success-box p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--ink-soft);
+        }
 
-      .success-box strong {
-        color: var(--green-deep);
-      }
+        .success-box strong {
+            color: var(--green-deep);
+        }
 
-      .hidden {
-        display: none !important;
-      }
+        .hidden { display: none !important; }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <div class="login-container">
-      <!-- ÉCRAN DE CONNEXION -->
-      <div id="login-view">
-        <h1>Connexion</h1>
-        <p class="subtitle">Accédez à votre espace NaturoPatra</p>
+        <!-- ECRAN DE CONNEXION -->
+        <div id="login-view">
+            <h1>Connexion</h1>
+            <p class="subtitle">Accédez à votre espace NaturoPatra</p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Adresse e-mail</label>
+                    <input type="email" id="login-email" required placeholder="exemple@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+            </form>
+            <a class="toggle-link" id="go-to-signup">Pas encore de compte ? S'inscrire</a>
+        </div>
 
-        <form id="login-form">
-          <div class="form-group">
-            <label for="login-email">Adresse e-mail</label>
-            <input
-              type="email"
-              id="login-email"
-              required
-              placeholder="exemple@mail.com"
-            />
-          </div>
-          <div class="form-group">
-            <label for="login-password">Mot de passe</label>
-            <input
-              type="password"
-              id="login-password"
-              required
-              placeholder="••••••••"
-            />
-          </div>
-          <button type="submit" class="btn">Se connecter</button>
-        </form>
-        <a class="toggle-link" id="go-to-signup"
-          >Pas encore de compte ? S'inscrire</a
-        >
-      </div>
+        <!-- ECRAN D'INSCRIPTION -->
+        <div id="signup-view" class="hidden">
+            <h1>Inscription</h1>
+            <p class="subtitle">Créez votre compte client NaturoPatra</p>
+            
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">Adresse e-mail</label>
+                    <input type="email" id="signup-email" required placeholder="exemple@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Mot de passe</label>
+                    <input type="password" id="signup-password" required placeholder="6 caractères minimum" minlength="6">
+                </div>
+                <button type="submit" class="btn" style="background: var(--gold);">Créer mon compte</button>
+            </form>
+            <a class="toggle-link" id="go-to-login">Déjà un compte ? Se connecter</a>
+        </div>
 
-      <!-- ÉCRAN D'INSCRIPTION -->
-      <div id="signup-view" class="hidden">
-        <h1>Inscription</h1>
-        <p class="subtitle">Créez votre compte client NaturoPatra</p>
+        <!-- ZONE DE NOTIFICATION -->
+        <div id="msg-zone" class="message-zone"></div>
 
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="signup-email">Adresse e-mail</label>
-            <input
-              type="email"
-              id="signup-email"
-              required
-              placeholder="exemple@mail.com"
-            />
-          </div>
-          <div class="form-group">
-            <label for="signup-password">Mot de passe</label>
-            <input
-              type="password"
-              id="signup-password"
-              required
-              placeholder="6 caractères minimum"
-              minlength="6"
-            />
-          </div>
-          <button type="submit" class="btn" style="background: var(--gold)">
-            Créer mon compte
-          </button>
-        </form>
-        <a class="toggle-link" id="go-to-login"
-          >Déjà un compte ? Se connecter</a
-        >
-      </div>
+        <!-- ECRAN CONNECTE -->
+        <div id="welcome-view" class="success-box">
+            <h1>Bienvenue</h1>
+            <p style="margin-top: 10px;">Vous êtes actuellement connecté en tant que : <br><strong id="user-display-email"></strong></p>
+            <button id="logout-btn" class="btn" style="background: #c94c4c;">Se déconnecter</button>
+        </div>
 
-      <!-- ZONE DE NOTIFICATION -->
-      <div id="msg-zone" class="message-zone"></div>
-
-      <!-- ÉCRAN CONNECTÉ -->
-      <div id="welcome-view" class="success-box">
-        <h1>Bienvenue</h1>
-        <p style="margin-top: 10px">
-          Vous êtes actuellement connecté en tant que : <br /><strong
-            id="user-display-email"
-          ></strong>
-        </p>
-        <button id="logout-btn" class="btn" style="background: #c94c4c">
-          Se déconnecter
-        </button>
-      </div>
-
-      <!-- RETOUR ACCUEIL -->
-      <a href="../index.html" class="btn btn-outline">← Retour à l'accueil</a>
+        <!-- RETOUR ACCUEIL -->
+        <a href="../index.html" class="btn btn-outline">← Retour à l'accueil</a>
     </div>
 
     <!-- SDK SUPABASE -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-      // Mettez vos identifiants ici dès que possible
-      const SUPABASE_URL = "https://ymevvaeyxoxwomfdihib.supabase.co";
-      const SUPABASE_ANON_KEY =
-        "sb_publishable_J8secXf4UfTMS6WqnLLtkg_RVQwhYjf";
+        const SUPABASE_URL = "https://ymevvaeyxoxwomfdihib.supabase.co"; 
+        const SUPABASE_ANON_KEY = "sb_publishable_J8secXf4UfTMS6WqnLLtkg_RVQwhYjf"; 
 
-      let supabase = null;
-      try {
-        if (SUPABASE_URL.startsWith("http")) {
-          supabase = window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_ANON_KEY,
-          );
-        }
-      } catch (e) {
-        console.error("Erreur de configuration Supabase.");
-      }
-
-      const loginView = document.getElementById("login-view");
-      const signupView = document.getElementById("signup-view");
-      const welcomeView = document.getElementById("welcome-view");
-
-      const loginForm = document.getElementById("login-form");
-      const signupForm = document.getElementById("signup-form");
-      const msgZone = document.getElementById("msg-zone");
-      const userDisplayEmail = document.getElementById("user-display-email");
-      const logoutBtn = document.getElementById("logout-btn");
-
-      const goToSignup = document.getElementById("go-to-signup");
-      const goToLogin = document.getElementById("go-to-login");
-
-      // Basculer entre les formulaires (Fonctionne toujours maintenant !)
-      goToSignup.addEventListener("click", (e) => {
-        e.preventDefault();
-        loginView.classList.add("hidden");
-        signupView.classList.remove("hidden");
-        masquerMessage();
-      });
-
-      goToLogin.addEventListener("click", (e) => {
-        e.preventDefault();
-        signupView.classList.add("hidden");
-        loginView.classList.remove("hidden");
-        masquerMessage();
-      });
-
-      function afficherMessage(texte, type) {
-        msgZone.textContent = texte;
-        msgZone.className = `message-zone ${type}`;
-        msgZone.style.display = "block";
-      }
-
-      function masquerMessage() {
-        msgZone.style.display = "none";
-      }
-
-      async function controlerEtatAuth() {
-        if (!supabase) return; // Ne fait rien si Supabase n'est pas configuré
-
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
-
-        if (session?.user) {
-          loginView.classList.add("hidden");
-          signupView.classList.add("hidden");
-          welcomeView.style.display = "block";
-          userDisplayEmail.textContent = session.user.email;
-        } else {
-          welcomeView.style.display = "none";
-          if (signupView.classList.contains("hidden")) {
-            loginView.classList.remove("hidden");
-          }
-        }
-      }
-
-      // Connexion
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        masquerMessage();
-        if (!supabase) {
-          afficherMessage(
-            "Veuillez d'abord configurer vos clés Supabase dans le code.",
-            "error",
-          );
-          return;
+        let supabase = null;
+        try {
+            if (SUPABASE_URL.startsWith("http")) {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            }
+        } catch(e) {
+            console.error("Erreur d'initialisation Supabase :", e);
         }
 
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
+        const loginView = document.getElementById("login-view");
+        const signupView = document.getElementById("signup-view");
+        const welcomeView = document.getElementById("welcome-view");
+        
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const msgZone = document.getElementById("msg-zone");
+        const userDisplayEmail = document.getElementById("user-display-email");
+        const logoutBtn = document.getElementById("logout-btn");
 
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
+        const goToSignup = document.getElementById("go-to-signup");
+        const goToLogin = document.getElementById("go-to-login");
+
+        // Basculer vers l'inscription
+        goToSignup.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginView.classList.add("hidden");
+            signupView.classList.remove("hidden");
+            masquerMessage();
         });
 
-        if (error) {
-          afficherMessage("Identifiants incorrects ou introuvables.", "error");
-        } else {
-          controlerEtatAuth();
-        }
-      });
+        // Basculer vers la connexion
+        goToLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            signupView.classList.add("hidden");
+            loginView.classList.remove("hidden");
+            masquerMessage();
+        });
 
-      // Inscription
-      signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        masquerMessage();
-        if (!supabase) {
-          afficherMessage(
-            "Veuillez d'abord configurer vos clés Supabase dans le code.",
-            "error",
-          );
-          return;
+        function afficherMessage(texte, type) {
+            msgZone.textContent = texte;
+            msgZone.className = `message-zone ${type}`;
+            msgZone.style.display = "block";
         }
 
-        const email = document.getElementById("signup-email").value;
-        const password = document.getElementById("signup-password").value;
+        function masquerMessage() {
+            msgZone.style.display = "none";
+        }
 
-        const { data, error } = await supabase.auth.signUp({ email, password });
+        async function controlerEtatAuth() {
+            if (!supabase) return;
+            
+            const { data: { session } } = await supabase.auth.getSession();
+            
+            if (session?.user) {
+                loginView.classList.add("hidden");
+                signupView.classList.add("hidden");
+                welcomeView.style.display = "block";
+                userDisplayEmail.textContent = session.user.email;
+            } else {
+                welcomeView.style.display = "none";
+                if (signupView.classList.contains("hidden")) {
+                    loginView.classList.remove("hidden");
+                }
+            }
+        }
 
-        if (error) {
-          afficherMessage(`Erreur d'inscription : ${error.message}`, "error");
-        } else {
-          if (data.user && data.session === null) {
-            afficherMessage(
-              "Compte créé ! Vérifiez votre boîte mail pour confirmer votre inscription.",
-              "success",
-            );
-            signupForm.reset();
-          } else {
-            afficherMessage("Inscription réussie !", "success");
+        // Action de Connexion
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            masquerMessage();
+            if (!supabase) { afficherMessage("Supabase n'est pas configuré.", "error"); return; }
+
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                afficherMessage("Identifiants incorrects ou introuvables.", "error");
+            } else {
+                controlerEtatAuth();
+            }
+        });
+
+        // Action d'Inscription
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            masquerMessage();
+            if (!supabase) { afficherMessage("Supabase n'est pas configuré.", "error"); return; }
+
+            const email = document.getElementById("signup-email").value;
+            const password = document.getElementById("signup-password").value;
+
+            const { data, error } = await supabase.auth.signUp({ email, password });
+
+            if (error) {
+                afficherMessage(`Erreur : ${error.message}`, "error");
+            } else {
+                if (data.user && data.session === null) {
+                    afficherMessage("Compte créé ! Vérifiez votre boîte mail pour confirmer votre inscription.", "success");
+                    signupForm.reset();
+                } else {
+                    afficherMessage("Inscription réussie !", "success");
+                    controlerEtatAuth();
+                }
+            }
+        });
+
+        // Déconnexion
+        logoutBtn.addEventListener("click", async () => {
+            if (supabase) await supabase.auth.signOut();
+            masquerMessage();
             controlerEtatAuth();
-          }
-        }
-      });
+        });
 
-      // Déconnexion
-      logoutBtn.addEventListener("click", async () => {
-        if (supabase) await supabase.auth.signOut();
-        masquerMessage();
-        controlerEtatAuth();
-      });
-
-      window.addEventListener("DOMContentLoaded", controlerEtatAuth);
+        window.addEventListener("DOMContentLoaded", controlerEtatAuth);
     </script>
-  </body>
+</body>
 </html>

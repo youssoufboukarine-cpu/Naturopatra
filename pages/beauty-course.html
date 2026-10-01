@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glow From Within Course — NaturoPatra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --cream-2: #f3efe7;
+        --ink: #2b2a26;
+        --ink-soft: #5a5850;
+        --green-deep: #3c4a34;
+        --green-mid: #7c8f6e;
+        --gold: #b8a06a;
+        --line: #dcd6c8;
+        --white: #ffffff;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Jost", "Segoe UI", sans-serif;
+        --font-arabic: "Plus Jakarta Sans", Tahoma, Arial, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; direction: ltr;
+      }
+      .ar-text { direction: rtl; font-family: var(--font-arabic); text-align: right; }
+      h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; font-weight: 600; }
+      p { margin: 0 0 1em 0; color: var(--ink-soft); font-size: 1rem; }
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+      .site-header { border-bottom: 1px solid var(--line); background: var(--cream); position: sticky; top: 0; z-index: 50; }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
+      .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
+      .main-nav { display: flex; gap: 34px; }
+      .main-nav a { font-size: 0.85rem; text-transform: uppercase; font-weight: 500; }
+      .main-nav a:hover { color: var(--green-deep); }
+      .icon-btn { background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; position: relative; display: inline-flex; align-items: center; }
+      .cart-badge { position: absolute; top: -2px; right: -2px; background: var(--gold); color: var(--white); font-size: 0.7rem; font-weight: 600; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+      .course-hero { padding: 60px 0 40px; text-align: center; }
+      .course-hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--green-deep); }
+      .divider { display: inline-block; width: 50px; height: 2px; background: var(--gold); margin: 15px 0; }
+
+      .course-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding-bottom: 80px; }
+      .course-main-info { background: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--line); }
+      .course-main-info h3 { margin-top: 25px; margin-bottom: 10px; font-size: 1.3rem; color: var(--green-deep); }
+      .course-img-large { width: 100%; height: 350px; object-fit: cover; border-radius: 6px; margin-bottom: 25px; }
+      
+      .purchase-card { background: var(--cream-2); border: 1px solid var(--line); border-radius: 8px; padding: 30px; height: fit-content; position: sticky; top: 100px; text-align: center; }
+      .price-tag { font-size: 2rem; font-weight: 700; color: var(--green-deep); margin-bottom: 20px; }
+      .btn-buy { display: block; width: 100%; background: var(--green-deep); color: var(--white); border: none; padding: 14px; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-bottom: 15px; text-align: center; }
+      .btn-buy:hover { background: #2d3728; }
+      .features-list { list-style: none; padding: 0; margin: 20px 0 0 0; text-align: left; font-size: 0.9rem; }
+      .features-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px; color: var(--ink-soft); }
+
+      .site-footer { background: var(--green-deep); color: #dfe3da; padding: 40px 0; text-align: center; font-size: 0.85rem; }
+
+      @media (max-width: 768px) { .course-content { grid-template-columns: 1fr; } .main-nav { display: none; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo">NaturoPatra</a>
+        <nav class="main-nav">
+          <a href="../index.html">Home</a>
+          <a href="articles.html">Articles</a>
+          <a href="courses.html">Courses</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <a href="shop.html" aria-label="Cart" class="icon-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z" /><path d="M6 6L4 2H2" /><circle cx="9" cy="20" r="1" /><circle cx="17" cy="20" r="1" /></svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="course-hero">
+      <div class="container">
+        <h1 class="ar-text">التألق من الداخل للخارج</h1>
+        <span class="divider"></span>
+        <p class="ar-text" style="max-width: 600px; margin: 0 auto; text-align: center;">
+          اكتشفي سر الجمال الحقيقي للوصول إلى أفضل نسخة من نفسك من خلال نمط حياة صحي ومتوازن.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="course-content">
+        <div class="course-main-info ar-text">
+          <img src="https://images.unsplash.com/photo-1608248597359-9d7b407a51c9?w=800&q=80" alt="Beauty & Health" class="course-img-large" />
+          <h2>عن هذه الدورة التدريبية</h2>
+          <p>الجمال الحقيقي ليس مظهرًا خارجيًا مؤقتاً، بل هو انعكاس لصحة خلايا جسمك ونقاء أمعائك وتوازنك الداخلي.</p>
+          <h3>ماذا ستتعلمين في هذه الدورة؟</h3>
+          <p>• <strong>النضارة والإشراقة الطبيعية:</strong> تأثير التغذية السليمة على صفاء البشرة.<br>• <strong>الترطيب العميق:</strong> آليات العناية الطبيعية بالخلايا.<br>• <strong>التخلص من السموم:</strong> تنقية الجسم لمكافحة البهتان.</p>
+        </div>
+
+        <div class="purchase-card">
+          <div class="price-tag">€49.00</div>
+          <button class="btn-buy" onclick="alert('Added to cart successfully!')">Add to Cart 🛒</button>
+          <p style="font-size: 0.85rem; color: var(--ink-soft);">Instant digital access to all video lessons and guides.</p>
+          <ul class="features-list">
+            <li>✅ Full lifetime access</li>
+            <li>✅ Downloadable PDF guides</li>
+            <li>✅ Audio modules included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container"><p>© 2026 NaturoPatra Integrative Health — All rights reserved.</p></div>
+    </footer>
+  </body>
+</html>

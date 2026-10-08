@@ -88,9 +88,6 @@
         background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; position: relative; display: inline-flex; align-items: center; transition: color 0.2s;
       }
       .icon-btn svg { width: 19px; height: 19px; }
-      .cart-badge {
-        position: absolute; top: -2px; right: -2px; background: var(--gold); color: var(--white); font-size: 0.7rem; font-weight: 600; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      }
 
       /* ---------- HERO ---------- */
       .divider { display: inline-block; width: 56px; height: 2px; background: var(--green-mid); }
@@ -159,21 +156,6 @@
       .protocol-card p { font-size: 0.88rem; margin: 0 20px 20px; flex-grow: 1; }
       .see-all { text-align: center; margin-top: 44px; }
 
-      /* ---------- PRODUCTS ---------- */
-      .products-section { padding: 60px 0; background: var(--white); border-top: 1px solid var(--line); }
-      .admin-box { background: var(--cream-2); border: 1px dashed var(--gold); border-radius: 8px; padding: 30px; margin-bottom: 40px; }
-      .admin-box h2 { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 20px; color: var(--green-deep); }
-      .admin-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) auto; gap: 16px; align-items: end; }
-      .admin-form input { padding: 10px 14px; border: 1px solid var(--line); border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem; background: var(--white); outline: none; }
-      .admin-form button { background: var(--green-deep); color: var(--white); border: none; padding: 11px 24px; border-radius: 4px; cursor: pointer; font-family: var(--font-body); font-size: 0.9rem; transition: background 0.2s; }
-      .admin-form button:hover { background: #2d3728; }
-      .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
-      .product-card { background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; }
-      .product-card:hover { transform: translateY(-4px); box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1); }
-      .product-card h3 { font-size: 1.2rem; margin-bottom: 8px; font-family: var(--font-display); }
-      .product-price { font-size: 1.2rem; font-weight: 600; color: var(--green-deep); margin-bottom: 14px; }
-      .hidden { display: none !important; }
-
       /* ---------- FOOTER ---------- */
       .site-footer { background: var(--green-deep); color: #dfe3da; padding: 64px 0 0; }
       .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.3fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
@@ -195,10 +177,10 @@
         .main-nav { display: none; }
         .carousel-card { flex: 0 0 calc(50% - 11px); }
         .about-inner { grid-template-columns: 1fr; gap: 36px; }
-        .protocol-grid, .product-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        .protocol-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 560px) {
-        .protocol-grid, .product-grid, .admin-form, .footer-grid { grid-template-columns: 1fr; }
+        .protocol-grid, .footer-grid { grid-template-columns: 1fr; }
         .carousel-arrow { display: none; }
       }
 
@@ -234,10 +216,6 @@
           </button>
           <a href="pages/account.html" aria-label="Account" class="icon-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
-          </a>
-          <a href="pages/shop.html" aria-label="Cart" class="icon-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z" /><path d="M6 6L4 2H2" /><circle cx="9" cy="20" r="1" /><circle cx="17" cy="20" r="1" /></svg>
-            <span class="cart-badge" id="cart-count">0</span>
           </a>
         </div>
       </div>
@@ -311,17 +289,6 @@
         <div class="see-all">
           <a href="pages/courses.html" class="btn btn-outline">View all courses &nbsp;→</a>
         </div>
-      </div>
-    </section>
-
-    
-
-        <div class="section-heading">
-          <h2>My Wellness Shop</h2>
-          <span class="divider small center"></span>
-          <p class="section-sub">A selection of high-quality natural products for a healthy lifestyle.</p>
-        </div>
-        <div id="liste-produits" class="product-grid"></div>
       </div>
     </section>
 

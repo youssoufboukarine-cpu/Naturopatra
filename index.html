@@ -135,8 +135,6 @@
 
       /* ---------- ABOUT ---------- */
       .about { background: var(--cream-2); padding: 80px 0; }
-      .about-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
-      .about-photo { border-radius: 6px; height: 460px; width: 100%; object-fit: cover; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25); }
       .eyebrow { display: block; font-size: 0.78rem; letter-spacing: 2px; color: var(--green-mid); font-weight: 600; margin-bottom: 10px; }
       .about-text h2 { font-size: 2.1rem; margin-bottom: 2px; }
       .about-text p { margin-top: 18px; }
@@ -256,7 +254,7 @@
     <!-- COURSES (ARABIC CONTENT) -->
     <section class="protocols">
       <div class="container">
-       <div class="section-heading ar-text">
+        <div class="section-heading ar-text">
           <h2>الدورات والورش التدريبية</h2>
           <span class="divider small center"></span>
           <p class="section-sub">
@@ -265,7 +263,7 @@
         </div>
 
         <div class="protocol-grid">
-       <!-- COURSE 1: Weight Control -->
+          <!-- COURSE 1: Weight Control -->
           <div class="protocol-card">
             <div class="protocol-photo">
               <img src="images/weight.jpg" alt="Weight Control Setup" class="protocol-img" />
@@ -275,16 +273,18 @@
             <p class="ar-text">افهمي جسمك وقيّمي وزنك بوعي أكبر.</p>
             <a href="pages/weight-course.html" class="btn btn-dark small">Discover</a>
           </div>
-       <!-- COURSE 2: Beauty & Health -->
+
+          <!-- COURSE 2: Beauty & Health -->
           <div class="protocol-card">
             <div class="protocol-photo">
               <img src="images/beauty.jpg" alt="Beauty and Health" class="protocol-img" />
               <span class="protocol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" /></svg></span>
             </div>
-            <h3 class="ar-text">الجمال الحقيقي </h3>
+            <h3 class="ar-text">الجمال الحقيقي</h3>
             <p class="ar-text">أظهري جمالك العميق واكتشفي ملامحك الصحية وكوني على أفضل نسخة منك.</p>
             <a href="pages/beauty-course.html" class="btn btn-dark small">Discover</a>
           </div>
+
           <!-- COURSE 3: Psychological Calmness -->
           <div class="protocol-card">
             <div class="protocol-photo">
@@ -296,7 +296,7 @@
             <a href="pages/calmness-course.html" class="btn btn-dark small">Discover</a>
           </div>
 
-<!-- COURSE 4: Healthy Cooking (تم ربطها باسم cooking.jpg بدقة) -->
+          <!-- COURSE 4: Healthy Cooking -->
           <div class="protocol-card">
             <div class="protocol-photo">
               <img src="images/cooking.jpg" alt="Healthy cooking workshop" class="protocol-img" />
@@ -306,16 +306,46 @@
             <p class="ar-text">تعلمي فنون تحضير وجبات لذيذة ومغذية تدعم صحتك دون التضحية بالمذاق الرائع.</p>
             <a href="pages/cooking-workshop.html" class="btn btn-dark small">Discover</a>
           </div>
+        </div>
 
-             <div class="see-all">
+        <div class="see-all">
           <a href="pages/courses.html" class="btn btn-outline">View all courses &nbsp;→</a>
         </div>
       </div>
     </section>
 
-    
-    
-<!-- ABOUT ME -->
+    <!-- SHOP & ADMIN -->
+    <section class="products-section">
+      <div class="container">
+        <div id="admin-panel" class="admin-box hidden">
+          <h2>🛠️ Admin Dashboard</h2>
+          <form id="form-produit" class="admin-form">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500">Product Name :</label>
+              <input type="text" id="p-nom" placeholder="Ex: Essential Oil" required />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500">Description :</label>
+              <input type="text" id="p-desc" placeholder="Ex: Organic and relaxing..." />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <label style="font-size: 0.8rem; font-weight: 500">Price (€) :</label>
+              <input type="number" id="p-prix" placeholder="Ex: 14.90" step="0.01" required />
+            </div>
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+
+        <div class="section-heading">
+          <h2>My Wellness Shop</h2>
+          <span class="divider small center"></span>
+          <p class="section-sub">A selection of high-quality natural products for a healthy lifestyle.</p>
+        </div>
+        <div id="liste-produits" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
     <section class="about">
       <div class="container" style="max-width: 800px; text-align: center;">
         <div class="about-text">
